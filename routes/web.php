@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+// use App\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +24,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// View::composer('header', function( $view )
+// {
+//     $data = Category::where('status', 1)->get();
+//     $view->with( 'data', $data ?? '' );
+// });
+

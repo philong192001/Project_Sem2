@@ -17,6 +17,8 @@
 		<title>Coffee</title>
 		{{-- <base href="{{ asset('') }}"> --}}
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		    <style type="text/css">.menuOTher .wrapper>.box_mid .mid-title,.menuOTher div#vnt-main>.box_mid .mid-title,.vnt-button .button-wrap>div.buttons:first-child{display:none}div#vnt-content>.menuOTher{padding:95px 0 50px;}.mid-content>.otherDes,.mid-content>.productDes{margin-bottom:80px}.wrapper>.vnt-button .buttons{max-width:364px;width:100%;margin:0 auto;float:none}@media (max-width:991px){div#vnt-content>.menuOTher{padding:25px 0 35px}.mid-content>.otherDes{margin-bottom:25px}}</style>
+
 			<!--
 			CSS
 			============================================= -->
@@ -24,12 +26,17 @@
 			<link rel="stylesheet" href="{{ asset('css/linearicons.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
 			<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+			<link rel="stylesheet" href="{{ asset('css/product.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/global.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/slick.css') }}">
 		</head>
 		<body>
 
@@ -62,6 +69,7 @@
 			<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
 			<script src="{{ asset('js/mail-script.js') }}"></script>
 			<script src="{{ asset('js/main.js') }}"></script>
+			<script src="{{ asset('js/slick.js') }}"></script>
 
 
 
