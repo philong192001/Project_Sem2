@@ -518,6 +518,10 @@ class ComposerStaticInit493aefbca4ba13e0794f5e54421b479d
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+<<< HEAD
+=======
+        'App\\Http\\Controllers\\Coffe\\AminLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Coffe/AminLoginController.php',
+>>>>>>> 2d223964ae540b40bffe9a7281067dff81cd5ce8
         'App\\Http\\Controllers\\Coffe\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Coffe/PageController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -628,6 +632,7 @@ class ComposerStaticInit493aefbca4ba13e0794f5e54421b479d
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CategoriesSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoriesSeeder.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -4952,6 +4957,7 @@ class ComposerStaticInit493aefbca4ba13e0794f5e54421b479d
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+<<<<<<< HEAD
         'UniSharp\\LaravelFilemanager\\Controllers\\Controller' => __DIR__ . '/..' . '/unisharp/laravel-filemanager/src/Controllers/Controller.php',
         'UniSharp\\LaravelFilemanager\\Controllers\\CropController' => __DIR__ . '/..' . '/unisharp/laravel-filemanager/src/Controllers/CropController.php',
         'UniSharp\\LaravelFilemanager\\Controllers\\DeleteController' => __DIR__ . '/..' . '/unisharp/laravel-filemanager/src/Controllers/DeleteController.php',
@@ -4988,6 +4994,9 @@ class ComposerStaticInit493aefbca4ba13e0794f5e54421b479d
         'UniSharp\\LaravelFilemanager\\LfmStorageRepository' => __DIR__ . '/..' . '/unisharp/laravel-filemanager/src/LfmStorageRepository.php',
         'UniSharp\\LaravelFilemanager\\Middlewares\\CreateDefaultFolder' => __DIR__ . '/..' . '/unisharp/laravel-filemanager/src/Middlewares/CreateDefaultFolder.php',
         'UniSharp\\LaravelFilemanager\\Middlewares\\MultiUser' => __DIR__ . '/..' . '/unisharp/laravel-filemanager/src/Middlewares/MultiUser.php',
+=======
+        'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
+>>>>>>> 2d223964ae540b40bffe9a7281067dff81cd5ce8
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\Mixin' => __DIR__ . '/..' . '/webmozart/assert/src/Mixin.php',

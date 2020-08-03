@@ -26,6 +26,10 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
+<<<<<<< HEAD
+=======
+    'App\\Http\\Controllers\\Coffe\\AminLoginController' => $baseDir . '/app/Http/Controllers/Coffe/AminLoginController.php',
+>>>>>>> 2d223964ae540b40bffe9a7281067dff81cd5ce8
     'App\\Http\\Controllers\\Coffe\\PageController' => $baseDir . '/app/Http/Controllers/Coffe/PageController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
@@ -136,6 +140,7 @@ return array(
     'Carbon\\Traits\\Units' => $vendorDir . '/nesbot/carbon/src/Carbon/Traits/Units.php',
     'Carbon\\Traits\\Week' => $vendorDir . '/nesbot/carbon/src/Carbon/Traits/Week.php',
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
+    'CategoriesSeeder' => $baseDir . '/database/seeds/CategoriesSeeder.php',
     'Cron\\AbstractField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
     'Cron\\DayOfMonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -4460,6 +4465,7 @@ return array(
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+<<<<<<< HEAD
     'UniSharp\\LaravelFilemanager\\Controllers\\Controller' => $vendorDir . '/unisharp/laravel-filemanager/src/Controllers/Controller.php',
     'UniSharp\\LaravelFilemanager\\Controllers\\CropController' => $vendorDir . '/unisharp/laravel-filemanager/src/Controllers/CropController.php',
     'UniSharp\\LaravelFilemanager\\Controllers\\DeleteController' => $vendorDir . '/unisharp/laravel-filemanager/src/Controllers/DeleteController.php',
@@ -4496,6 +4502,9 @@ return array(
     'UniSharp\\LaravelFilemanager\\LfmStorageRepository' => $vendorDir . '/unisharp/laravel-filemanager/src/LfmStorageRepository.php',
     'UniSharp\\LaravelFilemanager\\Middlewares\\CreateDefaultFolder' => $vendorDir . '/unisharp/laravel-filemanager/src/Middlewares/CreateDefaultFolder.php',
     'UniSharp\\LaravelFilemanager\\Middlewares\\MultiUser' => $vendorDir . '/unisharp/laravel-filemanager/src/Middlewares/MultiUser.php',
+=======
+    'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
+>>>>>>> 2d223964ae540b40bffe9a7281067dff81cd5ce8
     'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     'Webmozart\\Assert\\Assert' => $vendorDir . '/webmozart/assert/src/Assert.php',
     'Webmozart\\Assert\\Mixin' => $vendorDir . '/webmozart/assert/src/Mixin.php',
