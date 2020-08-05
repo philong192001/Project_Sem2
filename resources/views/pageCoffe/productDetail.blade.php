@@ -1,86 +1,124 @@
-
-
 @extends('master')
-
 @section('content')
-<div id="vnt-content">
-  <div class="menuOTher">
-    <div class="wrapper">
-      <div class="mod-content row">
-        <div id="vnt-main" class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-         <div class="boxBB">
-          <div class="productTitle"><h1>{{ $product->name_product}}</h1></div>
-          <div class="gridP">
-            <div class="col">
-              <div class="productThumnail">
-                <div id="vnt-thumbnail-for" class="slick-init slick-initialized slick-slider">
-                  <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 375px; transform: translate3d(0px, 0px, 0px);"><div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 375px;">
-                    <div class="img"><img class="img-fix" src="{{ $product->link_image }}" alt="PhinDi Choco" height="340px;" width="340px;"></div>
-                  </div></div></div>
-                </div>
-                <div id="vnt-thumbnail-nav" class="slick-init slick-initialized slick-slider" style="">
-                  <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);"><div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 0px;">
-                    <div class="img"><img src="https://www.highlandscoffee.com.vn/vnt_upload/product/07_2020/thumbs/270_crop_PHINDI_Choco-min.png" alt="PhinDi Choco"></div>
-                  </div></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="productDes desc">
-               <p>{{ $product->content }}</p>
+<section class="home-slider owl-carousel">
 
-               <p><a href="tel:19001755"><img alt="65-dat-mua-kmk" data-ck-zoom="yes" src="https://highlandscoffee.com.vn/vnt_upload/product/04_2020/65-dat-mua-kmk.png"></a></p>
-             </div>
-            <div class="productPrice">Price : <strong id="ext_price">$ {{$product->unit_price }} </strong></div>
+      <div class="slider-item" style="background-image: url({{ asset('img/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Product Detail</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Product Detail</span></p>
+            </div>
+
           </div>
         </div>
       </div>
-      <div class="box_mid">
-        <div class="mid-content">
-          <div id="slideOther" class="slideOther slick-init slick-initialized slick-slider">
+    </section>
 
-            <div class="slick-list draggable">
-              <div class="slick-track" style="opacity: 1; width: 534px; transform: translate3d(0px, 0px, 0px);">
-                @foreach ($new_product as $item)
-                  <div class="item slick-slide slick-current slick-active" tabindex="0" style="width: 267px;" data-slick-index="0" aria-hidden="false">
-                  <div class="product">
-                    <div class="img"><a href="{{ route('productDetail' , $item->id ) }}" tabindex="0"><img src="{{ $item->link_image }}" alt=""></a></div>
-                    <div class="tend2"><h3><a href="{{ route('productDetail' , $item->id ) }}" tabindex="0">{{ $item->name_product }}</a></h3></div>
-                    <div class="price">Price: <strong>$ {{$item->unit_price }} </strong></div>
-                  </div>
-                </div>
-                @endforeach
-                
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6 mb-5 ftco-animate">
+    				<a href="" class="image-popup"><img src="{{ asset('img/menu-2.jpg')}}" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
+    				<h3>Creamy Latte Coffee</h3>
+    				<p class="price"><span>$4.90</span></p>
+    				<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+    				<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.
+						</p>
+						<div class="row mt-4">
+							<div class="col-md-6">
+								<div class="form-group d-flex">
+		              <div class="select-wrap">
+	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+	                  <select name="" id="" class="form-control">
+	                  	<option value="">Small</option>
+	                    <option value="">Medium</option>
+	                    <option value="">Large</option>
+	                    <option value="">Extra Large</option>
+	                  </select>
+	                </div>
+		            </div>
+							</div>
+							<div class="w-100"></div>
+							<div class="input-group col-md-6 d-flex mb-3">
+	             	<span class="input-group-btn mr-2">
+	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+	                   <i class="icon-minus"></i>
+	                	</button>
+	            		</span>
+	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+	             	<span class="input-group-btn ml-2">
+	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+	                     <i class="icon-plus"></i>
+	                 </button>
+	             	</span>
+	          	</div>
+          	</div>
+          	<p><a href="cart.html" class="btn btn-primary py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
 
-                
-              </div>
-            </div>
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+          	<span class="subheading">Discover</span>
+            <h2 class="mb-4">Related products</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
         </div>
-      </div>
-    </div>
-
-
-    <div id="vnt-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <div class="otherDes">
-        <p class="t1"><strong>Sản tương tự</strong></p>
-      </div>
-      <div class="box-focus">
-        @foreach ($same_product as $item)
-        <div class="itemMenu">
-          <div class="img"><a href="{{ route('productDetail', $item->id) }}"><img src="{{ $item->link_image }}" alt=""></a></div>
-          <div class="caption">
-            <div class="tend"><h3><a href="{{ route('productDetail', $item->id) }}">{{ $item->name_product }}</a></h3></div>
-            <div class="des">{{ $item->content }}</div>
-          </div>
-        </div>  
-        @endforeach
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-</div>
+        <div class="row">
+        	<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-1.jpg')}});"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Coffee Capuccino</a></h3>
+    						<p>A small river named Duden flows by their place and supplies</p>
+    						<p class="price"><span>$5.90</span></p>
+    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+    					</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-2.jpg')}});"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Coffee Capuccino</a></h3>
+    						<p>A small river named Duden flows by their place and supplies</p>
+    						<p class="price"><span>$5.90</span></p>
+    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+    					</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-3.jpg')}});"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Coffee Capuccino</a></h3>
+    						<p>A small river named Duden flows by their place and supplies</p>
+    						<p class="price"><span>$5.90</span></p>
+    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+    					</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-4.jpg')}});"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Coffee Capuccino</a></h3>
+    						<p>A small river named Duden flows by their place and supplies</p>
+    						<p class="price"><span>$5.90</span></p>
+    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+    					</div>
+    				</div>
+        	</div>
+        </div>
+    	</div>
+    </section>
 @endsection
-
