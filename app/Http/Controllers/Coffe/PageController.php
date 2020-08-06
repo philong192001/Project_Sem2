@@ -10,11 +10,11 @@ class PageController extends Controller
 {
     public function showHome(Request $request)
     {
-    	$new_product = Product::where('status',1)->paginate(6);
+    	// $new_product = Product::where('status',1)->paginate(6);
 
-        $categoryProduct = Category::where('status', 1)->get();
+     //    $categoryProduct = Category::where('status', 1)->get();
     	
-        return view('pageCoffe.home', compact('new_product','categoryProduct'));
+        return view('pageCoffe.home');
     }
 
 }

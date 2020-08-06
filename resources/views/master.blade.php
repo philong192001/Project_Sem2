@@ -1,45 +1,34 @@
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="{{ asset('img/fav.png') }}">
-		<!-- Author Meta -->
-		<meta name="author" content="codepixer">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Coffee</title>
-		{{-- <base href="{{ asset('') }}"> --}}
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-		    <style type="text/css">.menuOTher .wrapper>.box_mid .mid-title,.menuOTher div#vnt-main>.box_mid .mid-title,.vnt-button .button-wrap>div.buttons:first-child{display:none}div#vnt-content>.menuOTher{padding:95px 0 50px;}.mid-content>.otherDes,.mid-content>.productDes{margin-bottom:80px}.wrapper>.vnt-button .buttons{max-width:364px;width:100%;margin:0 auto;float:none}@media (max-width:991px){div#vnt-content>.menuOTher{padding:25px 0 35px}.mid-content>.otherDes{margin-bottom:25px}}</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coffee - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
-			<!--
-			CSS
-			============================================= -->
+    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 
-			<link rel="stylesheet" href="{{ asset('css/linearicons.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-			<link rel="stylesheet" href="{{ asset('css/product.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/global.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-			<link rel="stylesheet" href="{{ asset('css/slick.css') }}">
-		</head>
-		<body>
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
+
+    
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  </head>
+  <body>
 			
 
 
@@ -51,31 +40,29 @@
 
 			
 
-			<script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-			<script type="text/javascript" src="{{ asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA') }}"></script>
-			<script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
-			<script src="{{ asset('js/easing.min.js') }}"></script>
-			<script src="{{ asset('js/hoverIntent.js') }}"></script>
-			<script src="{{ asset('js/superfish.min.js') }}"></script>
-			<script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
-			<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-			<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-			<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-			<script src="{{ asset('js/jquery.sticky.js') }}"></script>
-			<script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
-			<script src="{{ asset('js/parallax.min.js') }}"></script>
-			<script src="{{ asset('js/waypoints.min.js') }}"></script>
-			<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
-			<script src="{{ asset('js/mail-script.js') }}"></script>
-			<script src="{{ asset('js/main.js') }}"></script>
-			<script src="{{ asset('js/slick.js') }}"></script>
+		 <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-
-
-		</body>
-		</html>
-
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('js/popper.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('js/aos.js') }}"></script>
+  <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
+  <script src="{{ asset('js/scrollax.min.js') }}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{{ asset('js/google-map.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
+    
+  </body>
+</html>
 
 

@@ -1,54 +1,28 @@
-  <header id="header" class="header-scrolled">
-				<div class="header-top">
-		  			<div class="container">
-				  		<div class="row justify-content-end">
-				  			<div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
-				  				<ul>
-				  					<li>
-				  						Mon-Fri: 8am to 2pm
-				  					</li>
-				  					<li>
-				  						Sat-Sun: 11am to 4pm
-				  					</li>
-				  					<li>
-				  						<a href="tel:(012) 6985 236 7512">(012) 6985 236 7512</a>
-				  					</li>				  					
-				  				</ul>
-				  			</div> 
-				  		</div>			  					
-		  			</div>
-				</div>			  	
-			    <div class="container">
-			    	<div class="row align-items-center justify-content-between d-flex">
-				      <div id="logo">
-				        <a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="" title="" /></a>
-				      </div>
-				      <nav id="nav-menu-container">
-				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="{{ route('home_page') }}">Home</a></li>
-				          <li><a href="#about">About</a></li>
-                          
-                          <li class="menu-has-children"><a href="">Coffe</a>
-                          	<ul>
-                          		@foreach ($categoryProduct as $item) 
-                          		<li>
-                          			<a href="{{route('productCategory',$item->id)}}">
-                          			    {{ $item->name, $item->id }}
-                          		    </a>
-                          	    </li>
-                          		@endforeach
-                          	</ul>
-                          </li>
-               	          <li><a href="#review">Review</a></li>
-				          <li><a href="#blog">Blog</a></li>
-				          <li class="menu-has-children"><a href="#">Pages</a>
-				            <ul>
-				              <li><a href="#">Generic</a></li>
-				              <li><a href="#">Elements</a></li>
-				            </ul>
-				          </li>
-				        </ul>
-				      </nav><!-- #nav-menu-container -->		    		
-			    	</div>
-			    </div>
-			  </header><!-- #header -->
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Coffee<small>Blend</small></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{{ route('show-home') }}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{{ route('show-menu') }}" class="nav-link">Menu</a></li>
+	          <li class="nav-item"><a href="{{ route('show-services') }}" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="{{ route('show-blog') }}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{{ route('show-about') }}" class="nav-link">About</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="{{ route('show-shop') }}">Shop</a>
+                <a class="dropdown-item" href="product-single.html">Single Product</a>
+                <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
+                <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="{{ route('show-contact') }}" class="nav-link">Contact</a></li>
+	          <li class="nav-item cart"><a href="{{ route('show-cart') }}" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+	        </ul>
+	      </div>
+		  </div>
+	  </nav>
