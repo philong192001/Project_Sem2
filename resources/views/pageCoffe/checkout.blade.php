@@ -182,12 +182,23 @@
             <div class="sidebar-box ftco-animate">
               <div class="categories">
                 <h3>Categories</h3>
-                <li><a href="#">Tour <span>(12)</span></a></li>
-                <li><a href="#">Hotel <span>(22)</span></a></li>
-                <li><a href="#">Coffee <span>(37)</span></a></li>
-                <li><a href="#">Drinks <span>(42)</span></a></li>
-                <li><a href="#">Foods <span>(14)</span></a></li>
-                <li><a href="#">Travel <span>(140)</span></a></li>
+                @if (Session::has("Cart") != null)
+                <div class="cart-total mb-3">
+                	<h3>Cart Totals</h3>
+                	<p class="d-flex">
+                		<span>Total Quanty : </span>
+                		<span>{{ Session::get('Cart')->totalQuanty }}</span>
+                	</p>
+
+                	<hr>
+                	<p class="d-flex total-price">
+                		<span>Total Price : </span>
+                		<span>$ {{ number_format(Session::get('Cart')->totalPrice) }}</span>
+                	</p>
+                </div>
+                @endif
+                
+               
               </div>
             </div>
 
