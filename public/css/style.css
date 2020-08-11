@@ -7283,7 +7283,7 @@ body {
     width: 100%; }
 
 span {
-  color: #bfbfbf; }
+  color: #fff; }
 
 a {
   -webkit-transition: .3s all ease;
@@ -7380,7 +7380,7 @@ h1, h2, h3, h4, h5,
         .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator:before {
           display: none; } }
   .ftco-navbar-light .navbar-nav > .nav-item.cart > a {
-    position: relative; }
+    position: relative;top: 25px; }
     .ftco-navbar-light .navbar-nav > .nav-item.cart > a .icon {
       font-size: 20px;
       color: #fff; }
@@ -7388,6 +7388,7 @@ h1, h2, h3, h4, h5,
       position: absolute;
       top: 10px;
       right: 5px;
+      left: 35px;
       width: 24px;
       height: 24px;
       text-align: center;
