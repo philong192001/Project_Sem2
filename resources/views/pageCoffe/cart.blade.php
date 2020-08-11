@@ -98,10 +98,10 @@
   @foreach ($products as $item)
   <div class="col-md-3">
     <div class="menu-entry">
-      <a href="#" class="img" style="background-image: url({{ $item->link_image }});"></a>
+      <a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url({{ $item->link_image ,$item->id}});"></a>
       <div class="text text-center pt-4">
-        <h3><a href="">{{ $item->name_product }}</a></h3>
-        <p>{{ $item->content }}</p>
+        <h3><a href="{{ route('show-productDetail', $item->id)}}">{{ $item->name_product , $item->id}}</a></h3>
+        <p>{{ $item->content  }}</p>
         <p class="price"><span>${{ $item->price }}</span></p>   
         <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
       </div>

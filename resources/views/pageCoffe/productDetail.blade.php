@@ -22,32 +22,40 @@
   <div class="row">
 
    <div class="col-lg-6 mb-5 ftco-animate">
-    <a href="" class="image-popup"><img src="{{ $product->link_image }}" class="img-fluid" alt="Colorlib Template"></a>
+    <a href="" class="image-popup"><img src="{{ $proSingle->link_image }}" class="img-fluid" alt="Colorlib Template"></a>
   </div>
   <div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    <h3>{{ $product->name_product }}</h3>
-    <p class="price"><span>$4.90</span></p>
-    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.
-    </p>
+    <h3>{{ $proSingle->name_product }}</h3>
+    <p class="price"><span>${{ $proSingle->price }}</span></p>
+    <p>{{ $proSingle->content }}</p>
+    
     <div class="row mt-4">
 
-  <div class="w-100"></div>
-  <div class="input-group col-md-6 d-flex mb-3">
-   <span class="input-group-btn mr-2">
-    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-      <i class="icon-minus"></i>
-    </button>
-  </span>
-  <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-  <span class="input-group-btn ml-2">
-    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-      <i class="icon-plus"></i>
-    </button>
-  </span>
+      <div class="w-100"></div>
+      <div class="input-group col-md-6 d-flex mb-3">
+       <span class="input-group-btn mr-2">
+        <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+          <i class="icon-minus"></i>
+        </button>
+      </span>
+      <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+      <span class="input-group-btn ml-2">
+        <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+          <i class="icon-plus"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    
+   <div class="col-md-3">
+    <div class="text text-center pt-4">
+      <p><a  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+    </div>
+  </div>
+  
 </div>
-</div>
-<p><a  class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+
 </div>
 </div>
 </div>
@@ -63,14 +71,14 @@
    </div>
  </div>
  <div class="row">
-  @foreach ($products as $item)
-  <div class="col-md-3">
+   @foreach ($products as $item)
+   <div class="col-md-3">
     <div class="menu-entry">
-      <a href="#" class="img" style="background-image: url({{ $item->link_image }});"></a>
+      <a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url({{ $item->link_image }});"></a>
       <div class="text text-center pt-4">
-        <h3><a href="">{{ $item->name_product }}</a></h3>
+        <h3><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
         <p>{{ $item->content }}</p>
-        <p class="price"><span>${{ $item->price }}</span></p>   
+        <p class="price"><span>${{ $item->price }}</span></p> 
         <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
       </div>
     </div>
