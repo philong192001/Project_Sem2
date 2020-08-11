@@ -40,50 +40,20 @@
 
 		              <div class="tab-pane fade show active" id="v-pills-0" role="tabpanel" aria-labelledby="v-pills-0-tab">
 		              	<div class="row">
-		              		<div class="col-md-3">
-						        		<div class="menu-entry">
-						    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-1.jpg')}});"></a>
-						    					<div class="text text-center pt-4">
-						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-						    					</div>
-						    				</div>
-						        	</div>
-						        	<div class="col-md-3">
-						        		<div class="menu-entry">
-						    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-2.jpg')}});"></a>
-						    					<div class="text text-center pt-4">
-						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-						    					</div>
-						    				</div>
-						        	</div>
-						        	<div class="col-md-3">
-						        		<div class="menu-entry">
-						    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-3.jpg')}});"></a>
-						    					<div class="text text-center pt-4">
-						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-						    					</div>
-						    				</div>
-						        	</div>
-						        	<div class="col-md-3">
-						        		<div class="menu-entry">
-						    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-4.jpg')}});"></a>
-						    					<div class="text text-center pt-4">
-						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-						    					</div>
-						    				</div>
-						        	</div>
+		              		@foreach ($products as $item)
+		              			<div class="col-md-3">
+		              			<div class="menu-entry">
+		              				<a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url({{ $item->link_image }});"></a>
+		              				<div class="text text-center pt-4">
+		              					<h3><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
+		              					<p>{{ $item->content }}</p>
+		              					<p class="price"><span>${{ $item->price }}</span></p>	
+		              					<p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		@endforeach
+						        	
 		              	</div>
 		              </div>
 

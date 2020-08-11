@@ -190,22 +190,22 @@
     				<div class="row">
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-1.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url('{{ asset('img/menu-1.jpg')}}');"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-2.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url('{{ asset('img/menu-2.jpg')}}');"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-3.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url('{{ asset('img/menu-3.jpg')}}');"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-4.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url('{{ asset('img/menu-4.jpg')}}');"></a>
 		    				</div>
     					</div>
     				</div>
@@ -214,7 +214,7 @@
     	</div>
     </section>
 
-    <section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url({{ asset('img/bg_2.jpg')}});" data-stellar-background-ratio="0.5">
+    <section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url('{{ asset('img/bg_2.jpg')}}');" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
@@ -272,50 +272,19 @@
           </div>
         </div>
         <div class="row">
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-1.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-2.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-3.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('img/menu-4.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
+          @foreach ($products as $item)
+          <div class="col-md-3">
+            <div class="menu-entry">
+              <a href="#" class="img" style="background-image: url('{{ $item->link_image}}')"></a>
+              <div class="text text-center pt-4">
+                <h3><a href="#">{{ $item->name_product }}</a></h3>
+                <p>{{ $item->content }}</p>
+                <p class="price"><span>$ {{ $item->unit_price }}</span></p>
+                 <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+              </div>
+            </div>
+          </div>
+          @endforeach    
         </div>
     	</div>
     </section>
@@ -324,28 +293,28 @@
     	<div class="container-wrap">
     		<div class="row no-gutters">
 					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({{ asset('img/gallery-1.jpg')}});">
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url('{{ asset('img/gallery-1.jpg')}}');">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({{ asset('img/gallery-2.jpg')}});">
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url('{{ asset('img/gallery-2.jpg')}}');">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({{ asset('img/gallery-3.jpg')}});">
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url('{{ asset('img/gallery-3.jpg')}}');">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({{ asset('img/gallery-4.jpg')}});">
+						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url('{{ asset('img/gallery-4.jpg')}}');">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
     						<span class="icon-search"></span>
     					</div>
@@ -501,7 +470,7 @@
     	</div>
     </section>
 
-    <section class="ftco-section img" id="ftco-testimony" style="background-image: url({{ asset('img/bg_1.jpg')}});"  data-stellar-background-ratio="0.5">
+    <section class="ftco-section img" id="ftco-testimony" style="background-image: url('{{ asset('img/bg_1.jpg')}}');"  data-stellar-background-ratio="0.5">
     	<div class="overlay"></div>
 	    <div class="container">
 	      <div class="row justify-content-center mb-5">
@@ -521,7 +490,7 @@
 	              </blockquote>
 	              <div class="author d-flex mt-4">
 	                <div class="image mr-3 align-self-center">
-	                  <img src="{{ asset('img/person_1.jpg')}}" alt="">
+	                  <img src="{{ asset('img/person_2.jpg')}}" alt="">
 	                </div>
 	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
 	              </div>
@@ -594,7 +563,7 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('img/image_1.jpg')}}');">
+              <a href="" class="block-20" style="background-image: url('{{ asset('img/image_1.jpg')}}');">
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
@@ -609,7 +578,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('img/image_2.jpg')}}');">
+              <a href="" class="block-20" style="background-image: url('{{ asset('img/image_2.jpg')}}');">
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
@@ -624,7 +593,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('img/image_3.jpg')}}');">
+              <a href="" class="block-20" style="background-image: url('{{ asset('img/image_3.jpg')}}');">
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
