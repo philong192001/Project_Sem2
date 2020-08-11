@@ -67,7 +67,7 @@
                     <label>
                         Gia san pham
                     </label>
-                    <input class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Nhap gia san pham" type="text" value="{{ old('name_product') }}">
+                    <input class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Nhap gia san pham" type="text" value="{{ old('price') }}">
                 </input>
                 @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -107,7 +107,7 @@
             <label>
                 Noi dung
             </label>
-            <textarea class="form-control tinymce_editor_init" id="exampleFormControlTextarea1" name="contents" rows="10">
+            <textarea class="form-control tinymce_editor_init" id="exampleFormControlTextarea1" name="contents" rows="10" >{{ old('contents') }}
             </textarea>
         </div>
     </div>

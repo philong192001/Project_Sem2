@@ -13,7 +13,7 @@ class RoleAddRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class RoleAddRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required|unique:roles',
+            'display_name'=>'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required'     => 'Tên vai trò không được phép để trống',
+            'name.unique'       => 'Tên vai trò không được phép trùng',
+            'display_name.required'    => 'Mô tả không được phép để trống'        
         ];
     }
 }

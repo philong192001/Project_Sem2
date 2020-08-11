@@ -46,7 +46,7 @@
                         <td class="si-pic"><img src="{{ $item['productInfo']->link_image }}" alt=""></td>
                         <td class="si-text">
                           <div class="product-selected">
-                            <p>₫ {{ number_format($item['productInfo']->price) }} x {{ $item['quanty'] }}</p>
+                            <p>₫ {{-- {{ number_format($item['productInfo']->price) }} x {{ $item['quanty'] }} --}}</p>
                             <h6>{{ $item['productInfo']->name_product }}</h6>
                           </div>
                         </td>

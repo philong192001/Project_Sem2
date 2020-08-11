@@ -26,15 +26,21 @@
 							<label>
 								Tên Vai Trò
 							</label>
-							<input class="form-control" name="name" placeholder="Nhập tên vai trò" type="text" value="{{ old('name') }}">
+							<input class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nhập tên vai trò" type="text" value="{{ old('name') }}">
 						</input>
+						@error('name')
+						<div class="alert alert-danger">{{ $message }}</div>
+						@enderror
 					</div>
 					<div class="form-group">
 						<label>
 							Mô tả vai trò :
 						</label>
-						<textarea class="form-control" name="display_name" placeholder="Nhập mô tả vai trò" type="text" value="{{ old('display_name') }}" rows="3"></textarea> 
+						<textarea class="form-control @error('display_name') is-invalid @enderror" name="display_name" placeholder="Nhập mô tả vai trò" type="text" value="{{ old('display_name') }}" rows="3"></textarea> 
 					</input>
+					@error('display_name')
+					<div class="alert alert-danger">{{ $message }}</div>
+					@enderror
 				</div>				
 				<div class="col-md-12">
 					<div class="row">

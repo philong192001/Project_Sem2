@@ -25,7 +25,7 @@ span.icon.icon-shopping_cart {
 .ftco-navbar-light .navbar-nav > .nav-item.cart > a .bag {
   position: absolute;
   top: 10px;
-  /* right: 5px; */
+   right: 5px; 
   width: 15px;
   height: 15px;
   text-align: center;
@@ -34,7 +34,7 @@ span.icon.icon-shopping_cart {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  left: 31px;
+/*  left: 31px;*/
 }
 
 span .sa{

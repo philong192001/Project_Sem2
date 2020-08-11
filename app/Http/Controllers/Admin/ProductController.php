@@ -45,7 +45,7 @@ class ProductController extends Controller
             $dataProductCreate = [
                 'name_product' => $request->name_product,
                 'link_image'   => $request->link,
-                'unit_price'   => $request->price,
+                'price'   => $request->price,
                 'id_category'  => $request->category_id,
                 'content'      => $request->contents,
 
@@ -80,7 +80,7 @@ class ProductController extends Controller
             $dataProductUpdate = [
                 'name_product' => $request->name_product,
                 'link_image'   => $request->link,
-                'unit_price'   => $request->price,
+                'price'   => $request->price,
                 'id_category'  => $request->category_id,
                 'content'      => $request->contents
             ];

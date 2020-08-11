@@ -7380,7 +7380,7 @@ h1, h2, h3, h4, h5,
         .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator:before {
           display: none; } }
   .ftco-navbar-light .navbar-nav > .nav-item.cart > a {
-    position: relative;top: 25px; }
+    position: relative;}
     .ftco-navbar-light .navbar-nav > .nav-item.cart > a .icon {
       font-size: 20px;
       color: #fff; }
