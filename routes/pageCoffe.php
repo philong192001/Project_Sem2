@@ -1,31 +1,60 @@
 <?php 
 use Illuminate\Support\Facades\Route;
 
-   
-//home      
-        Route::get('home', 'Coffe\PageController@showHome')->name('show-home');
-                
 
-       
-//MENU
+        /* ----------------------Home--------------------------*/
+
+        Route::get('home', 'Coffe\PageController@showHome')->name('show-home');
+
+        /* ----------------------End Home--------------------------*/
+
+
+        /*----------------------Menu--------------------------*/
+
         Route::get('menu', 'Coffe\MenuController@showMenu')->name('show-menu');
 
-//Services
+        /* ----------------------End menu--------------------------*/
+
+        /* ----------------------Services--------------------------*/
+
         Route::get('services', 'Coffe\ServicesController@showServices')->name('show-services');
 
-//Blog
+        /* ----------------------End Services--------------------------*/
+
+
+        /* ----------------------Blog--------------------------*/
+
         Route::get('blog', 'Coffe\BlogController@showBlog')->name('show-blog');
 
-//about
-        Route::get('about', 'Coffe\AboutController@showAbout')->name('show-about');
-//shop
-        Route::get('shop', 'Coffe\ShopController@showShop')->name('show-shop');
-//productDetail
-        Route::get('chi-tiet/{id}', 'Coffe\ProductController@ShowProduct')->name('show-productDetail');
-//contact
-        Route::get('contact', 'Coffe\ContactController@showContact')->name('show-contact');
+        /* ----------------------End Blog--------------------------*/
 
-//cart
+        /* ----------------------About--------------------------*/
+
+        Route::get('about', 'Coffe\AboutController@showAbout')->name('show-about');
+
+        /* ----------------------End About--------------------------*/
+
+
+       
+
+        /* ----------------------Shop--------------------------*/
+
+         Route::get('shop', 'Coffe\ShopController@showShop')->name('show-shop');
+
+        /* ----------------------End Shop--------------------------*/
+
+        /* ----------------------ProductDetail--------------------------*/
+
+        Route::get('chi-tiet/{id}', 'Coffe\ProductController@ShowProduct')->name('show-productDetail');
+
+        /* ----------------------End ProDetail--------------------------*/
+
+        /* ----------------------ConTact--------------------------*/
+        Route::get('contact', 'Coffe\ContactController@showContact')->name('show-contact');
+        /* ----------------------End Contact--------------------------*/
+
+        /* ----------------------Cart--------------------------*/
+
         Route::get('cart', 'Coffe\CartController@showCart')->name('show-cart');
 
         Route::get('Add-Cart/{id}', 'Coffe\CartController@AddCart');
@@ -36,8 +65,17 @@ use Illuminate\Support\Facades\Route;
 
         Route::get('Save-Item-List-Cart/{id}/{quanty}', 'Coffe\CartController@SaveItemListCart');
 
-//checkout
-        Route::get('checkout', 'Coffe\CheckoutController@showCheckout')->name('show-checkout');
+        /* ----------------------End Cart--------------------------*/
 
-   
- ?> 
+
+
+        /* ----------------------Check Out--------------------------*/
+
+        Route::get('checkout', 'Coffe\CheckoutController@showCheckout')->name('show-checkout');
+        
+        /* ----------------------End CheckOut--------------------------*/
+
+
+
+
+?> 
