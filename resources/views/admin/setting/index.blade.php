@@ -11,6 +11,7 @@
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   @include('partials.content-header',['name' =>'Settings','key'=>'Project'])
@@ -21,6 +22,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="btn-group float-right">
+            @can('setting-add')
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               Add Setiing
               <span class="caret">
@@ -39,6 +41,7 @@
               </li>
             </ul>
           </div>
+          @endcan
         </div>
         <div class="col-md-12">
           <table class="table">
@@ -72,14 +75,18 @@
                   {{ $item->config_value }}
                 </td>
                 <td>
+                  @can('setting-edit')
                   <a class="btn btn-success" href="{{ route('settings.edit',['id'=>$item->id]).'?type='.$item->type }}">
                     Sua
                   </a>
+                  @endcan
                 </td>
                 <td>
+                   @can('setting-delete')
                   <a class="btn btn-danger action_delete" data-url="{{ route('settings.delete',['id'=>$item->id]) }}" href="">
                     Xoa
                   </a>
+                  @endcan
                 </td>
                 <td>
                 </td>
@@ -100,4 +107,3 @@
 </div>
 <!-- /.content-wrapper -->
 @endsection
-</link>

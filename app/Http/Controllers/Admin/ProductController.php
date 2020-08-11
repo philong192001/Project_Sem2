@@ -82,11 +82,10 @@ class ProductController extends Controller
                 'link_image'   => $request->link,
                 'unit_price'   => $request->price,
                 'id_category'  => $request->category_id,
-                'content'      => $request->contents,
-
+                'content'      => $request->contents
             ];
 
-            $dataUploadFeatureImage = $this->StorageTraitUpload($request, 'image_avatar', 'product');
+            $dataUploadFeatureImage = $this->StorageTraitUpload($request, 'image_avatar', 'products');
             //dd($dataUpload);
             if (!empty($dataUploadFeatureImage)) {
                 $dataProductUpdate['feature_image_name'] = $dataUploadFeatureImage['file_name'];

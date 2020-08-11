@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\MenuAddRequest;
 use App\Components\MenuRecusive;
 use App\Http\Controllers\Controller;
 use App\Menu;
+use App\Traits\DeleteTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class MenuController extends Controller
 {
+    use DeleteTrait;
     private $menuRecusive;
     private $menu;
 
@@ -27,11 +30,11 @@ class MenuController extends Controller
     }
     public function create()
     {
-        $optionSelect = $this->menuRecusive->MenuRecusiveAdd();
+        $optionSelect = $this->menuRecusive->menuRecusiveAdd();
         //dd($test);
         return view('admin.menus.add', compact('optionSelect'));
     }
-    public function store(Request $request)
+    public function store(MenuAddRequest $request)
     {
         $this->menu->create([
             'name'      => $request->name,
@@ -40,10 +43,10 @@ class MenuController extends Controller
         ]);
         return redirect()->route('menu.index');
     }
-    public function edit(Request $request, $id)
+    public function edit(Request $request,$id)
     {
         $MenuEdit     = $this->menu->find($id);
-        $optionSelect = $this->menuRecusive->MenuRecusiveEdit($MenuEdit->parent_id);
+        $optionSelect = $this->menuRecusive->menuRecusiveEdit($MenuEdit->parent_id);
         return view('admin.menus.edit', compact('optionSelect','MenuEdit'));
     }
     public function update(Request $request, $id)
@@ -55,9 +58,8 @@ class MenuController extends Controller
         ]);
         return redirect()->route('menu.index');
     }
-    public function delete(Request $request,$id)
+    public function delete($id)
     {
-    	$this->menu->find($id)->delete();
-    	return redirect()->route('menu.index');
+    	return $this->deleteTrait($id,$this->menu);
     }
 }

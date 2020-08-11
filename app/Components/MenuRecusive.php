@@ -13,16 +13,16 @@ class MenuRecusive
     {
         $this->html = '';
     }
-    public function MenuRecusiveAdd($parent_id = 0, $subMark = '')
+    public function MenuRecusiveAdd($parentId = 0, $subMark = '')
     {
-        $data = Menu::where('parent_id', $parent_id)->get();
+        $data = Menu::where('parent_id', $parentId)->get();
         foreach ($data as $item) {
             $this->html .= '<option value="' . $item->id . '">' . $subMark . $item->name . '</option>';
             $this->MenuRecusiveAdd($item->id, $subMark . '&nbsp&nbsp&nbsp&nbsp');
         }
         return $this->html;
     }
-    public function MenuRecusiveEdit($parentIdMenuEdit, $parentId = 0, $subMark = '')
+    public function menuRecusiveEdit($parentIdMenuEdit, $parentId = 0, $subMark = '')
     {
         $data = Menu::where('parent_id', $parentId)->get();
         foreach ($data as $item) {
@@ -33,7 +33,7 @@ class MenuRecusive
                 $this->html .= '<option value="' . $item->id . '">' . $subMark . $item->name . '</option>';
 
             }
-            $this->MenuRecusiveEdit($parentIdMenuEdit, $subMark . '&nbsp&nbsp&nbsp&nbsp');
+            $this->menuRecusiveEdit($parentIdMenuEdit,$item->id, $subMark . '&nbsp&nbsp&nbsp&nbsp');
         }
         return $this->html;
     }

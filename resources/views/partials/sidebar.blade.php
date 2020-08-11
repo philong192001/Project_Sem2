@@ -17,7 +17,7 @@
                 </img>
             </div>
             <div class="info">
-                <a class="d-block" href="#">
+                <a class="d-block" href="{{ route('admin.logout') }}">
                    VOGiACu
                 </a>
             </div>
@@ -41,7 +41,7 @@
                         <i class="nav-icon fas fa-th">
                         </i>
                         <p>
-                            Quan li Danh muc 
+                            Quản lí Danh mục 
                             <span class="right badge badge-danger">
                                 New
                             </span>
@@ -53,7 +53,7 @@
                         <i class="nav-icon fas fa-th">
                         </i>
                         <p>
-                            Quan li San pham
+                            Quản lí Sản phẩm
                             <span class="right badge badge-danger">
                                 New
                             </span>
@@ -69,6 +69,62 @@
                             <span class="right badge badge-danger">
                                 New
                             </span>
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('users.index') }}">
+                        <i class="nav-icon fas fa-th">
+                        </i>
+                        <p>
+                            Danh sách users
+                            <span class="right badge badge-danger">
+                                New
+                            </span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('roles.index') }}">
+                        <i class="nav-icon fas fa-th">
+                        </i>
+                        <p>
+                            Danh sách vai trò
+                            <span class="right badge badge-danger">
+                                New
+                            </span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('blog.index') }}">
+                        <i class="nav-icon fas fa-th">
+                        </i>
+                        <p>
+                            Quản Lí Blog
+                            <span class="right badge badge-danger">
+                                New
+                            </span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('roles.index') }}">
+                        <i class="nav-icon fas fa-th">
+                        </i>
+                        <p>
+                            Quản Lí Contact
+                            <span class="right badge badge-danger">
+                                New
+                            </span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('permissions.create') }}">
+                        <p>
+                           Tạo dữ liệu bảng Permission
+                           
                         </p>
                     </a>
                 </li>

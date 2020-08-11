@@ -1,7 +1,11 @@
 @extends('layout_admin.admin')
-@section('title')Trang Admin
+@section('title')Trang Menu Admin
 @endsection
 @section('content')
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script type="text/javascript" src="{{ asset('admins\main.js') }}"></script>
+@endsection
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -13,7 +17,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
+          @can('menu-add')
           <a href=" {{ route('menu.create') }}" class="btn btn-success float-right n-2" >Add</a>
+          @endcan
         </div>
         <div class="col-md-12">
           <table class="table">
@@ -34,20 +40,28 @@
               <td>{{ $item->name }}</td>
               <td>{{ $item->parent_id }}</td>
               <td>{{ $item->created_at }}</td>
-              <td><a href="{{ route('menu.edit',['id'=>$item->id]) }}" class="btn btn-success">Sua</a></td>
-              <td><a href="{{ route('menu.delete',['id'=>$item->id]) }}" class="btn btn-danger">Xoa</a></td>
-              <td></td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-12">
-        {{ $menus->links() }}
-      </div>
+              <td>
+                @can('menu-edit')
+                <a href="{{ route('menu.edit',['id'=>$item->id]) }}" class="btn btn-success">Sua</a>
+                @endcan
+              </td>
+              <td>
+               @can('menu-delete')
+               <a data-url="{{ route('menu.delete',['id'=>$item->id]) }}" class="btn btn-danger action_delete">Xoa</a>
+               @endcan
+             </td>
+             <td></td>
+           </tr>
+           @endforeach
+         </tbody>
+       </table>
+     </div>
+     <div class="col-md-12">
+      {{ $menus->links() }}
     </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.row -->
+</div><!-- /.container-fluid -->
 </div>
 <!-- /.content -->
 </div>

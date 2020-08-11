@@ -17,7 +17,10 @@
 						@csrf
 					<div class="form-group">
 						<label>Ten danh muc</label>
-						<input name="name" type="text" class="form-control" placeholder="Nhap ten danh muc">
+						<input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Nhap ten danh muc">
+						@error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
 					</div>
 					<div class="form-group">
 						<label >CHon danh muc cha</label>
@@ -37,4 +40,10 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+@section('js')
+<script src="//cdn.tinymce.com/4/tinymce.min.js">
+</script>
+<script src="{{ asset('admins/product/add.js') }}">
+</script>
+@endsection
 @endsection

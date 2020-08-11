@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\CategoryAddRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
@@ -45,7 +46,7 @@ class CategoryController extends Controller
 		$categories = $this->category->latest()->paginate(5);
 		return view('admin.categories.index',compact('categories'));
 	}
-	public function store(Request $request )
+	public function store(CategoryAddRequest $request )
 	{
 		$this->category->create([
 			'name' => $request->name,

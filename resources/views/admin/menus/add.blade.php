@@ -15,19 +15,22 @@
 				<div class="col-md-6">
 					<form action="{{ route('menu.store') }}" method="post">
 						@csrf
-					<div class="form-group">
-						<label>Ten Menu</label>
-						<input name="name" type="text" class="form-control" placeholder="Nhap ten menu">
-					</div>
-					<div class="form-group">
-						<label >CHon Menu cha</label>
-						<select class="form-control" name="parent_id" >
-							<option value="0">CHon menu cha</option>
-							{!! $optionSelect !!}
-						</select>
-					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+						<div class="form-group">
+							<label>Ten Menu</label>
+							<input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Nhap ten menu">
+							@error('name')
+							<div class="alert alert-danger">{{ $message }}</div>
+							@enderror    
+						</div>
+						<div class="form-group">
+							<label >CHon Menu cha</label>
+							<select class="form-control" name="parent_id" >
+								<option value="0">CHon menu cha</option>
+								{!! $optionSelect !!}
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
 				</div>
 				
 			</div>

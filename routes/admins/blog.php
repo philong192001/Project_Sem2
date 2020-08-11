@@ -1,0 +1,36 @@
+<?php  
+Route::prefix('blog')->group(function(){
+	Route::get('/',
+		[
+			'as'=>'blog.index',
+			'uses'=>'Admin\BlogController@index'
+		]);
+	Route::get('/create',
+		[
+			'as'=>'blog.create',
+			'uses'=>'Admin\BlogController@create',
+                // 'middleware'=>'can:user-add'
+		]);
+	 Route::post('/store',
+            [
+                'as'=>'blog.store',
+                'uses'=>'Admin\BlogController@store'
+            ]);
+	  Route::get('/edit/{id}',
+            [
+                'as'=>'blog.edit',
+                'uses'=>'Admin\BlogController@edit',
+                //'middleware'=>'can:user-edit'
+            ]);
+	   Route::post('/update/{id}',
+            [
+                'as'=>'blog.update',
+                'uses'=>'Admin\BlogController@update'
+            ]);
+	 Route::get('/delete/{id}',
+            [
+                'as'=>'blog.delete',
+                'uses'=>'Admin\BlogController@delete',
+                // 'middleware'=>'can:user-delete'
+            ]);
+});

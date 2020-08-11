@@ -23,7 +23,7 @@
                                 <label>
                                     Ten san pham
                                 </label>
-                                <input class="form-control" name="name" placeholder="Nhap ten san pham" type="text" value="{{ $product->name_product }}">
+                                <input class="form-control" name="name_product" placeholder="Nhap ten san pham" type="text" value="{{ $product->name_product }}">
                                 </input>
                             </div>
                             <div class="form-group">
