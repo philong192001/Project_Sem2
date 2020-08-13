@@ -62,7 +62,7 @@
                                         {{ $item->name }}
                                     </td>
                                     <td>
-                                        {{ $item->link_image }}
+                                       <img src="{{ $item->link_image }}"> 
                                     </td>
                                     <td>
                                         {{ $item->title }}

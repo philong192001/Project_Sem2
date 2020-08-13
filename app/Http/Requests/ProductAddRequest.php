@@ -26,7 +26,6 @@ class ProductAddRequest extends FormRequest
         return [
             'name_product'         => 'required|unique:products|max:255|min:5',
             'link'         => 'required',
-            'image_avatar' => 'required',
             'price'        => 'required',
             'category_id'  => 'required',
 
@@ -41,7 +40,6 @@ class ProductAddRequest extends FormRequest
             'name_product.min'              => 'Tên sản phẩm không được phép dưới 5 kí tự',
             'price.required'        => 'Giá sản phẩm không được để trống',
             'link.required'         => 'Link ảnh sản phẩm không được phép không nhập',
-            'image_avatar.required' => 'Avatar sản phẩm không được phép để trống',
             'category_id.required'  => 'Danh mục sản phẩm không được phép để trống',
         ];
     }

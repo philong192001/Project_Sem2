@@ -39,7 +39,8 @@ return [
 		'menu',
 		'setting',
 		'user',
-		'role'
+		'role',
+		'blog'
 	],
 	'module_childrent'=>[
 		'list',

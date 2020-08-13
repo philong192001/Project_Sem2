@@ -166,7 +166,7 @@
                         </p>
                         <p class="price">
                             <span>
-                                ${{ $item->unit_price }}
+                                ${{ $item->price }}
                             </span>
                         </p>
                         <p>

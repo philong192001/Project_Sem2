@@ -57,11 +57,7 @@
                         <label>
                             Avatar san pham
                         </label>
-                        <input class="form-control-file @error('image_avatar') is-invalid @enderror" name="image_avatar" placeholder="Nhap  anh san pham" type="file" value="{{ old('image_avatar') }}"/>
-                  
-                    @error('image_avatar')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                        <input class="form-control-file" name="image_avatar" placeholder="Nhap  anh san pham" type="file" value="{{ old('image_avatar') }}"/>
                 </div>
                 <div class="form-group">
                     <label>

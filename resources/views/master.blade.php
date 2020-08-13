@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Coffe VOGIACU</title>
+  <title>Coffee - Free Bootstrap 4 Template by Colorlib</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,42 +27,7 @@
   <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
   <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <style type="text/css">
-  
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-span.bag.d-flex.justify-content-center.align-items-center {
-    position: absolute;
-    top: 16px;
-    left: 15px;
-}
-span.icon.icon-shopping_cart {
-    position: absolute;
-    bottom: 30px;
-}
-   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 300px;
-    left: -150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
 
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-  
-    .dropdown:hover .dropdown-content {display: block;}
-
-  </style>
   <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
 </head>
 <body>
@@ -95,11 +60,6 @@ span.icon.icon-shopping_cart {
  <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
  <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
  <script src="{{ asset('js/scrollax.min.js') }}"></script>
-
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
- <script src="{{ asset('js/google-map.js') }}"></script>
- <script src="{{ asset('js/main.js') }}"></script>
-
  <script src="{{ asset('js/main.js') }}"></script>
  <!-- JavaScript -->
  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
@@ -194,70 +154,8 @@ span.icon.icon-shopping_cart {
                 alertify.success('Cap nhap products success !!!');
             });
     }
-    
-  $(document).ready(function(){
-
-    var quantitiy=0;
-       $('.quantity-right-plus').click(function(e){
-            
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-            
-            // If is not undefined
-                
-                $('#quantity').val(quantity + 1);
-
-              
-                // Increment
-            
-        });
-
-         $('.quantity-left-minus').click(function(e){
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-            
-            // If is not undefined
-          
-                // Increment
-                if(quantity>0){
-                $('#quantity').val(quantity - 1);
-                }
-        });
-        
-    });
-    
-
-    // $(".edit-all").on("click", function(){
-    //     var lists = [];
-    //     $("table tbody tr td  ").each(function(){
-    //         $(this).find("input").each(function(){
-    //             var element = {key: $(this).data("id"), value: $(this).val()};
-    //             lists.push(element);
-    //         });
-    //     });
-    //     //console.log(list);
-
-    //      $.ajax({
-    //             url: 'Save-All',
-    //             type: 'POST',
-    //             data: {
-                    // "_token" : "",
-    //                 "data" : lists
-    //             }
-    //         }).done(function(response){
-    //             //alert("OOKKK");
-    //             location.reload();
-    //         });
-    // });
-
   </script>
-
 
 </body>
 </html>
-
 

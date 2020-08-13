@@ -26,7 +26,7 @@
   </div>
   <div class="col-lg-6 product-details pl-md-5 ftco-animate">
     <h3>{{ $proSingle->name_product }}</h3>
-    <p class="price"><span>${{ $proSingle->unit_price }}</span></p>
+    <p class="price"><span>${{ $proSingle->price }}</span></p>
     <p>{{ $proSingle->content }}</p>
     
     <div class="row mt-4">
@@ -78,7 +78,7 @@
       <div class="text text-center pt-4">
         <h3><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
         <p>{{ $item->content }}</p>
-        <p class="price"><span>${{ $item->unit_price }}</span></p> 
+        <p class="price"><span>${{ $item->price }}</span></p> 
         <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
       </div>
     </div>

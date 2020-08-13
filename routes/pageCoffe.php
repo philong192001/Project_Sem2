@@ -35,12 +35,12 @@ use Illuminate\Support\Facades\Route;
         /* ----------------------End About--------------------------*/
 
 
-       
+        
 
         /* ----------------------Shop--------------------------*/
 
          Route::get('shop', 'Coffe\ShopController@showShop')->name('show-shop');
-
+         Route::get('category/{type}', 'Coffe\PageController@CategoryDetails')->name('categorydetails');
         /* ----------------------End Shop--------------------------*/
 
         /* ----------------------ProductDetail--------------------------*/

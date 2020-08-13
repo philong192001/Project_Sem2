@@ -49,7 +49,7 @@
                                 <label>
                                     Gia san pham
                                 </label>
-                                <input class="form-control" name="price" placeholder="Nhap gia san pham" type="text" value="{{ $product->unit_price }}">
+                                <input class="form-control" name="price" placeholder="Nhap gia san pham" type="text" value="{{ $product->price }}">
                                 </input>
                             </div>
                             <div class="form-group">

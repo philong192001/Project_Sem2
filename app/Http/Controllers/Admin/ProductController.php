@@ -47,7 +47,7 @@ class ProductController extends Controller
                 'link_image'   => $request->link,
                 'price'   => $request->price,
                 'id_category'  => $request->category_id,
-                'content'      => $request->contents,
+                'content'      => strip_tags($request->contents)
 
             ];
 
@@ -82,7 +82,7 @@ class ProductController extends Controller
                 'link_image'   => $request->link,
                 'price'   => $request->price,
                 'id_category'  => $request->category_id,
-                'content'      => $request->contents
+                'content'      =>strip_tags($request->contents)
             ];
 
             $dataUploadFeatureImage = $this->StorageTraitUpload($request, 'image_avatar', 'products');
