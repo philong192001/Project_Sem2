@@ -33,4 +33,8 @@ class AdminController extends Controller
         Auth()->logout();
         return redirect()->route('admin.login');
     }
+    public function RegisterUser()
+    {
+        return view('register');
+    }
 }
