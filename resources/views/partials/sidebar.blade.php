@@ -4,7 +4,7 @@
     <a class="brand-link" href="">
         <img alt="AdminLTE Logo" class="brand-image img-circle elevation-3" src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }} " style="opacity: .8">
             <span class="brand-text font-weight-light">
-                Admin
+               Xin chào  {{ $user->name }}
             </span>
         </img>
     </a>
@@ -18,7 +18,7 @@
             </div>
             <div class="info">
                 <a class="d-block" href="{{ route('admin.logout') }}">
-                   VOGiACu
+                  {{ $user->name }}
                 </a>
             </div>
         </div>
@@ -54,6 +54,18 @@
                         </i>
                         <p>
                             Quản lí Sản phẩm
+                            <span class="right badge badge-danger">
+                                New
+                            </span>
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('product.index') }}">
+                        <i class="nav-icon fas fa-th">
+                        </i>
+                        <p>
+                            Quản lí Đơn hàng
                             <span class="right badge badge-danger">
                                 New
                             </span>

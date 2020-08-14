@@ -19,6 +19,8 @@ Route::get('/', 'Admin\AdminController@loginAdmin')->name('admin.login');
 Route::post('/', 'Admin\AdminController@postloginAdmin');
 
 Route::get('/register-user','Admin\AdminController@RegisterUser')->name('register.user');
+Route::post('/register-user', 'Admin\AdminController@postRegisterUser');
+
 Route::get('/admin', 'Admin\AdminController@loginAdmin');
 Route::post('/admin', 'Admin\AdminController@postloginAdmin');
 

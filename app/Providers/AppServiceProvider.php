@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -18,8 +20,10 @@ class AppServiceProvider extends ServiceProvider
            $categories = Category::where('parent_id',0)->get();
 
             $view->with('categories',$categories);
-
-
+        });
+        view()->composer('partials.sidebar',function($view){
+           $user= Auth::user();
+            $view->with('user',$user);
         });
     }
 
