@@ -224,7 +224,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
-		              	<strong class="number" data-number="100">0</strong>
+		              	<strong class="number" data-number="{{ $quantity_product }}">0</strong>
 		              	<span>Coffee Branches</span>
 		              </div>
 		            </div>
@@ -233,8 +233,8 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
-		              	<strong class="number" data-number="85">0</strong>
-		              	<span>Number of Awards</span>
+		              	<strong class="number" data-number="{{ $quantity_category }}">0</strong>
+		              	<span>Coffee Category</span>
 		              </div>
 		            </div>
 		          </div>
@@ -242,8 +242,8 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
-		              	<strong class="number" data-number="10567">0</strong>
-		              	<span>Happy Customer</span>
+		              	<strong class="number" data-number="{{ $quantity_order }}">0</strong>
+		              	<span>Order by Customer</span>
 		              </div>
 		            </div>
 		          </div>
@@ -251,8 +251,8 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
-		              	<strong class="number" data-number="900">0</strong>
-		              	<span>Staff</span>
+		              	<strong class="number" data-number="{{$quantity_feedback  }}">0</strong>
+		              	<span>FeedBack by Customer</span>
 		              </div>
 		            </div>
 		          </div>
@@ -277,9 +277,9 @@
             <div class="menu-entry">
               <a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url('{{ $item->link_image}}')"></a>
               <div class="text text-center pt-4">
-                <h3><a href="{{ route('show-productDetail', $item->id)}}">{{ $item->name_product }}</a></h3>
-                <p>{{ $item->content }}</p>
-                <p class="price"><span>$ {{ $item->price }}</span></p>
+                <h3 class="slow"><a href="{{ route('show-productDetail', $item->id)}}">{{ $item->name_product }}</a></h3>
+                <p class="slow">{{ $item->content }}</p>
+                <p class="price"><span>$  {{ number_format($item->price)  }}</span></p>
                  <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
               </div>
             </div>
@@ -288,7 +288,33 @@
         </div>
     	</div>
     </section>
-
+     <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <span class="subheading">Discover</span>
+            <h2 class="mb-4">Coffee New</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+        <div class="row">
+          @foreach ($new_products as $item)
+          <div class="col-md-3">
+            <div class="menu-entry">
+              <a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url('{{ $item->link_image}}')"></a>
+              <div class="text text-center pt-4">
+                <h3><a href="{{ route('show-productDetail', $item->id)}}">{{ $item->name_product }}</a></h3>
+                <p class="slow">{{ $item->content }}</p>
+                <p class="price"><span>  $ {{  number_format($item->price) }}</span></p>
+                 <p>           
+                  <a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+              </div>
+            </div>
+          </div>
+          @endforeach    
+        </div>
+      </div>
+    </section>
     <section class="ftco-gallery">
     	<div class="container-wrap">
     		<div class="row no-gutters">

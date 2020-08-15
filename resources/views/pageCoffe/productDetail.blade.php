@@ -2,6 +2,9 @@
 @section('content')
 <section class="home-slider owl-carousel">
 
+<style type="text/css">
+ 
+</style>
   <div class="slider-item" style="background-image: url({{ asset('img/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
    <div class="overlay"></div>
    <div class="container">
@@ -26,7 +29,7 @@
   </div>
   <div class="col-lg-6 product-details pl-md-5 ftco-animate">
     <h3>{{ $proSingle->name_product }}</h3>
-    <p class="price"><span>${{ $proSingle->price }}</span></p>
+    <p class="price"><span>${{number_format($proSingle->price)}}</span></p>
     <p>{{ $proSingle->content }}</p>
     
     <div class="row mt-4">
@@ -66,25 +69,24 @@
   <div class="row justify-content-center mb-5 pb-3">
     <div class="col-md-7 heading-section ftco-animate text-center">
      <span class="subheading">Discover</span>
-     <h2 class="mb-4">Related products</h2>
+     <h2 class="mb-4">Recommand products</h2>
      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
    </div>
  </div>
  <div class="row">
-   @foreach ($products as $item)
-   <div class="col-md-3">
-    <div class="menu-entry">
+   @foreach ($Recommand_Products as $item)
+   <div class="col-md-3 ">
+    <div class="menu-entry ">
       <a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url({{ $item->link_image }});"></a>
       <div class="text text-center pt-4">
         <h3><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
-        <p>{{ $item->content }}</p>
+        <p class="slow">{{ $item->content }}</p>
         <p class="price"><span>${{ $item->price }}</span></p> 
         <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
       </div>
     </div>
   </div>
   @endforeach
-
 </div>
 </div>
 </section>

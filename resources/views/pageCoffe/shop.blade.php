@@ -8,8 +8,8 @@
           <div class="row slider-text justify-content-center align-items-center">
 
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            	<h1 class="mb-3 mt-5 bread">Order Online</h1>
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Shop</span></p>
+            	<h1 class="mb-3 mt-5 bread">Category</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Category</span></p>
             </div>
 
           </div>
@@ -37,9 +37,9 @@
 		              			<div class="menu-entry">
 		              				<a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url({{ $item->link_image }});"></a>
 		              				<div class="text text-center pt-4">
-		              					<h3><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
-		              					<p>{{ $item->content }}</p>
-		              					<p class="price"><span>${{ $item->price }}</span></p>	
+		              					<h3 class="slow"><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
+		              					<p class="slow">{{ $item->content }}</p>
+		              					<p class="price"><span>${{number_format($item->price)}}</span></p>	
 		              					<p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
 		              				</div>
 		              			</div>
