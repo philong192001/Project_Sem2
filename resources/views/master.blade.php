@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
   <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('vendors\slowly-content.css') }}">
 </head>
 <body>
 

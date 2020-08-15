@@ -1,6 +1,6 @@
  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
-    <a class="navbar-brand" href="{{ route('show-home') }}">Coffee<small>Blend</small></a>
+    <a class="navbar-brand" href="{{ route('show-home') }}">Coffee<small>VGC</small></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu
     </button>
@@ -63,8 +63,8 @@
                   <td class="si-pic"><img src="{{ $item['productInfo']->link_image }}" alt=""></td>
                   <td class="si-text">
                     <div class="product-selected">
-                      <p> {{ number_format($item['productInfo']->price) }}₫ x {{ $item['quanty'] }}</p>
                       <h6>{{ $item['productInfo']->name_product }}</h6>
+                       <p> {{ number_format($item['productInfo']->price) }}₫ x {{ $item['quanty'] }}</p>
                     </div>
                   </td>
                   <td class="si-close">
