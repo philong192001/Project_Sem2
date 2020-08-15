@@ -19,7 +19,7 @@ class ShopController extends Controller
     	
     	// $que = \DB::getQueryLog();
     	// dd($que);
-    	$products = DB::table('products')->paginate(8);
+    	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
     	return view('pageCoffe.shop' , compact('products'));
     }
     

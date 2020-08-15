@@ -14,7 +14,7 @@ class ProductController extends Controller
         
         $proSingle = DB::table('products')->where('id', $req->id)->first();
 
-    	$products = DB::table('products')->paginate(8);
+    	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
 
     	return view('pageCoffe.productDetail', compact('products', 'proSingle'));
     }

@@ -13,7 +13,7 @@ class CartController extends Controller
     public function showCart() 
     {
         
-    	$products = DB::table('products')->paginate(8);
+    	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
     	return view('pageCoffe.cart', compact('products'));
     }
 
