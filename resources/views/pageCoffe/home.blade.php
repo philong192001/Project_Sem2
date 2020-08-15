@@ -279,7 +279,7 @@
               <div class="text text-center pt-4">
                 <h3><a href="{{ route('show-productDetail', $item->id)}}">{{ $item->name_product }}</a></h3>
                 <p>{{ $item->content }}</p>
-                <p class="price"><span>$ {{ $item->price }}</span></p>
+                <p class="price"><span>$ {{ number_format( $item->price ) }}</span></p>
                  <p><a onclick="AddCart({{ $item->id }})"  href=" javascrip:" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
               </div>
             </div>
