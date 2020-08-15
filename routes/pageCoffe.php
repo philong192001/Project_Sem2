@@ -40,6 +40,7 @@ use Illuminate\Support\Facades\Route;
         /* ----------------------Shop--------------------------*/
 
          Route::get('shop', 'Coffe\ShopController@showShop')->name('show-shop');
+
          Route::get('category/{type}', 'Coffe\PageController@CategoryDetails')->name('categorydetails');
         /* ----------------------End Shop--------------------------*/
 
@@ -72,6 +73,8 @@ use Illuminate\Support\Facades\Route;
         /* ----------------------Check Out--------------------------*/
 
         Route::get('checkout', 'Coffe\CheckoutController@showCheckout')->name('show-checkout');
+
+        Route::post('checkout','Coffe\CheckoutController@showPostCheckout')->name('show-post-checkout');
         
         /* ----------------------End CheckOut--------------------------*/
 
