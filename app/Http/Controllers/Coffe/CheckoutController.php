@@ -70,6 +70,7 @@ class CheckoutController extends Controller
             $bill_detail->unit_price = $value['price']/$value['quanty'];
             $bill_detail->total_price = $cart->totalPrice;
             $bill_detail->save();
+            return redirect()->route('show-home');
         }
 
         Session::forget('Cart');
