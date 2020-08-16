@@ -56,7 +56,7 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Số 8 Tôn Thất Thuyết , Nam Từ Liêm,Mỹ Đình, Hà Nội</span></li>
+	                <li><a href=""><span class="icon icon-map-marker"></span><span class="text">Số 8 Tôn Thất Thuyết , Nam Từ Liêm,Mỹ Đình, Hà Nội</span></li>
 	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+0355882001</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">longpvth1907014@fpt.edu.vn</span></a></li>
                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text"> minhnghianmth1907015@fpt.edu.vn</span></a></li>

@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use DB;
 class MenuController extends Controller
 {
-    public function showMenu(	)
+    public function showMenu()
     {
     	$products = DB::table('products')->paginate(8);
-    	return view('pageCoffe.menu');
+    	return view('pageCoffe.menu',compact('products'));
     }
 }

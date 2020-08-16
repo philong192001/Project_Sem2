@@ -37,11 +37,6 @@
 		              			<div class="menu-entry">
 		              				<a href="{{ route('show-productDetail', $item->id)}}" class="img" style="background-image: url({{ $item->link_image }});"></a>
 		              				<div class="text text-center pt-4">
-
-		              					<h3><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
-		              					<p>{{ $item->content }}</p>
-		              					<p class="price"><span>${{ number_format($item->price) }}</span></p>	
-
 		              					<h3 class="slow"><a href="{{ route('show-productDetail',$item->id) }}">{{ $item->name_product }}</a></h3>
 		              					<p class="slow">{{ $item->content }}</p>
 		              					<p class="price"><span>${{number_format($item->price)}}</span></p>	
