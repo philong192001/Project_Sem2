@@ -186,6 +186,7 @@
   </div>
 </div>
 </div>
+
 @if(Session('Cart') && (Session('Cart')->totalQuanty!=0))
 <button type="submit" class="btn btn-primary py-3 px-4" onclick="submitCart()">Place An Order </button>
 @else

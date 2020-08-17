@@ -66,7 +66,7 @@ class CheckoutController extends Controller
             $bill_detail = new BillDetail;
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $key;
-            $bill_detail->quantity = $value['quanty'];
+            $bill_detail->quantity = Session::get('Cart')->totalQuanty;
             $bill_detail->unit_price = $value['price']/$value['quanty'];
             $bill_detail->total_price = $cart->totalPrice;
             $bill_detail->save();
@@ -74,8 +74,8 @@ class CheckoutController extends Controller
         }
 
         Session::forget('Cart');
-        
-        return redirect()->back();
+        // $aler =  "alertify.success('Delete products success !!!')";
+        return redirect()->route('show-home');
     	
     }
 }

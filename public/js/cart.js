@@ -12,10 +12,12 @@
 
    function submitCart() {
      
-    alertify
-    .alert("Order successfully", function(){
-      alertify.success('OK');
-    });
+    // alertify
+    // .alert("Order successfully", function(){
+    //   alertify.success('OK');
+    // });
+    
+    alertify.success('Order successfully !!!');
   }
 
   function AddCart(id) {
