@@ -26,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 
         Route::get('bloggg', 'Coffe\BlogController@showBlog')->name('show-blog');
 
+        Route::get('blogdetail/{id}', 'Coffe\BlogController@showBlogDetail')->name('show-blogdetail');
+
         /* ----------------------End Blog--------------------------*/
 
         /* ----------------------About--------------------------*/

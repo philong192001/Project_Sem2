@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Coffe;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request\CheckoutRequest;
 use Illuminate\Http\Request;
 use DB;
 use App\Cart;
@@ -22,13 +23,15 @@ class CheckoutController extends Controller
 
     public function showPostCheckout(Request $req)
     {
-    	$this->validate($req,
-            [
-                'email' => 'email'
-            ],
-            [
-                'email.email'=>"Khong dung dinh dang email"
-            ]);
+    	// $this->validate($req,
+     //        [
+     //            'email' => 'email',
+     //            'address' => 'address'
+     //        ],
+     //        [
+     //            'email.email'=>"Khong dung dinh dang email",
+     //            'address' => ""
+     //        ]);
     	
     	$cart = Session::get('Cart');
         $find_user = User::where('email', $req->email)->first();
@@ -37,7 +40,6 @@ class CheckoutController extends Controller
 
         $user->name = $req->name;
         $user->email = $req->email;
-        $user->birthday = $req->birthday;
         $user->gender = $req->gender;
         $user->address = $req->address;
         $user->district = $req->district;
@@ -66,7 +68,7 @@ class CheckoutController extends Controller
             $bill_detail = new BillDetail;
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $key;
-            $bill_detail->quantity = Session::get('Cart')->totalQuanty;
+            $bill_detail->quantity = $value['quanty'];
             $bill_detail->price = $value['price']/$value['quanty'];
             $bill_detail->total_price = $cart->totalPrice;
             $bill_detail->save();

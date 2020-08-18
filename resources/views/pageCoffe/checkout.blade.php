@@ -37,7 +37,7 @@
            </div>
            <div class="col-md-6">
              <div class="form-group">
-              <h5 class="mb-2">Họ và tên<span>*</span></h5>
+              <h5 class="mb-2">Fullname<span>*</span></h5>
               @if(Auth::check())
               <b><input type="text" id="name" name="name" class="form-control" value ="{{Auth::user()->name}}" required ></b>
               @else
@@ -51,9 +51,10 @@
             <div class="form-group">
              <h5 class="mb-2">Address<span>*</span></h5>
              @if(Auth::check())
-             <b><input type="text" id="address" name="address" class="form-control" value ="{{Auth::user()->address}}" required  ></b>
+             <b><input  type="text" id="address" name="address" class="form-control" value ="{{Auth::user()->address}}" required  ></b>
              @else
              <input type="text" id="adresss" name="address" class="form-control"  required >
+
              @endif
            </div>
          </div>

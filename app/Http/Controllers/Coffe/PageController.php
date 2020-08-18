@@ -17,6 +17,9 @@ class PageController extends Controller
 
     	// $products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
      //    return view('pageCoffe.home', compact('products'));
+        $blogList = DB::table('blogs')
+        ->leftJoin('users', 'users.id', '=', 'blogs.id_user')
+        ->select('blogs.*', 'users.name')->get();
 
     	$products = DB::table('products')->take(8)->get();
         $new_products = Product::latest()->take(8)->get();
@@ -24,7 +27,7 @@ class PageController extends Controller
         $quantity_category = Category::count();
         $quantity_order = Bill::count();
         $quantity_feedback = Feedback::count();
-        return view('pageCoffe.home', compact('products','new_products','quantity_product','quantity_category','quantity_order','quantity_feedback'));
+        return view('pageCoffe.home', compact('products','new_products','quantity_product','quantity_category','quantity_order','quantity_feedback','blogList'));
 
     }
     

@@ -24,7 +24,7 @@
             //console.log(id);
 
             $.ajax({  
-              url: 'Add-Cart/'+id,
+              url: '/Add-Cart/'+id,
               type: 'GET',
             }).done(function(response){
              //console.log(response);

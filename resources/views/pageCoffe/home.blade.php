@@ -588,51 +588,23 @@
           </div>
         </div>
         <div class="row d-flex">
+           @foreach ($blogList as $item)
           <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="" class="block-20" style="background-image: url('{{ asset('img/image_1.jpg')}}');">
+            <div class="blog-entry align-self-stretch">
+              <a href="{{ route('show-blogdetail', $item->id) }}" class="block-20" style="background-image: url({{ $item->link_image }});">
               </a>
               <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
+                <div class="meta">
+                  <div><a href="#">{{ $item->created_at}}</a></div>
+                  <div><a href="{{ route('show-blogdetail', $item->id) }}">{{ $item->name }}</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="{{ route('show-blogdetail', $item->id) }}">{{ $item->title }}</a></h3>
+                <p class="slow" >{{ $item->content }}</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="" class="block-20" style="background-image: url('{{ asset('img/image_2.jpg')}}');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="" class="block-20" style="background-image: url('{{ asset('img/image_3.jpg')}}');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </section>
