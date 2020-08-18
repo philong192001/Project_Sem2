@@ -67,7 +67,7 @@ class CheckoutController extends Controller
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $key;
             $bill_detail->quantity = Session::get('Cart')->totalQuanty;
-            $bill_detail->unit_price = $value['price']/$value['quanty'];
+            $bill_detail->price = $value['price']/$value['quanty'];
             $bill_detail->total_price = $cart->totalPrice;
             $bill_detail->save();
             //return redirect()->route('show-home');

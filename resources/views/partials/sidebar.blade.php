@@ -61,7 +61,7 @@
                     </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('product.index') }}">
+                    <a class="nav-link" href="{{ route('order.index') }}">
                         <i class="nav-icon fas fa-th">
                         </i>
                         <p>

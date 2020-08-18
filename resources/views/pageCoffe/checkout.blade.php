@@ -29,7 +29,7 @@
               <div class="form-group">
                <h5 class="mb-2">Email<span>*</span></h5>
                @if(Auth::check())
-               <input type="text" id="email" name="email" class="form-control" value ="{{Auth::user()->email}}" required readonly="readonly">
+               <input type="text" id="email" name="email" class="form-control" value ="{{Auth::user()->email}}" required >
                @else
                <input type="text" id="email" name="email" class="form-control"  required >
                @endif
@@ -39,7 +39,7 @@
              <div class="form-group">
               <h5 class="mb-2">Họ và tên<span>*</span></h5>
               @if(Auth::check())
-              <b><input type="text" id="name" name="name" class="form-control" value ="{{Auth::user()->name}}" required readonly="readonly"></b>
+              <b><input type="text" id="name" name="name" class="form-control" value ="{{Auth::user()->name}}" required ></b>
               @else
               <input type="text" id="name" name="name" class="form-control"  required >
               @endif
@@ -51,7 +51,7 @@
             <div class="form-group">
              <h5 class="mb-2">Address<span>*</span></h5>
              @if(Auth::check())
-             <b><input type="text" id="address" name="address" class="form-control" value ="{{Auth::user()->address}}" required  readonly="readonly"></b>
+             <b><input type="text" id="address" name="address" class="form-control" value ="{{Auth::user()->address}}" required  ></b>
              @else
              <input type="text" id="adresss" name="address" class="form-control"  required >
              @endif
@@ -62,7 +62,7 @@
           <div class="form-group">
             <h5 class="mb-2">Gender<span>*</span></h5>
              @if(Auth::check())
-             <b><input type="text" id="gender" name="gender" class="form-control" value ="{{Auth::user()->gender}}" required  readonly="readonly"></b>
+             <b><input type="text" id="gender" name="gender" class="form-control" value ="{{Auth::user()->gender}}" required  ></b>
              @else
              <input type="text" id="gender" name="gender" class="form-control"  required >
              @endif
@@ -78,7 +78,7 @@
           <div class="form-group">
            <h5 class="mb-2">District<span>*</span></h5>
            @if(Auth::check())
-           <b><input type="text" id="district" name="district" class="form-control" value ="{{Auth::user()->district}}" required  readonly="readonly"></b>
+           <b><input type="text" id="district" name="district" class="form-control" value ="{{Auth::user()->district}}" required  ></b>
            @else
            <input type="text" id="district" name="district" class="form-control"  required >
            @endif
@@ -90,7 +90,7 @@
         <div class="form-group">
          <h5 class="mb-2">City<span>*</span></h5>
          @if(Auth::check())
-         <b><input type="text" id="city" name="city" class="form-control" value ="{{Auth::user()->city}}" required  readonly="readonly"></b>
+         <b><input type="text" id="city" name="city" class="form-control" value ="{{Auth::user()->city}}" required  ></b>
          @else
          <input type="text" id="city" name="city" class="form-control"  required >
          @endif
@@ -102,7 +102,7 @@
        <div class="form-group">
         <h5 class="mb-2">Phone<span>*</span></h5>
         @if(Auth::check())
-        <input type="text" id="phone" name="phone" class="form-control" value ="{{Auth::user()->phone}}" required readonly="readonly">
+        <input type="text" id="phone" name="phone" class="form-control" value ="{{Auth::user()->phone}}" required >
         @else
         <input type="text" id="number" name="number" class="form-control"  required >
         @endif
