@@ -59,22 +59,22 @@
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-phone"></span></div>
 	    					<div class="text">
-	    						<h3>000 (123) 456 7890</h3>
-	    						<p>A small river named Duden flows by their place and supplies.</p>
+	    						<h3>{{getConfigValueSettingTable('phone_contact')}}</h3>
+	    						<p>{{getConfigValueSettingTable('about_contact')}}</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-my_location"></span></div>
 	    					<div class="text">
-	    						<h3>198 West 21th Street</h3>
-	    						<p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+	    						<h3>{{getConfigValueSettingTable('address_contact')}}</h3>
+	    						<p>{{getConfigValueSettingTable('addressDetail_contact')}}</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-clock-o"></span></div>
 	    					<div class="text">
-	    						<h3>Open Monday-Friday</h3>
-	    						<p>8:00am - 9:00pm</p>
+	    						<h3>{{getConfigValueSettingTable('open_door')}}</h3>
+	    						<p>{{getConfigValueSettingTable('time-open-close')}}</p>
 	    					</div>
 	    				</div>
 	    			</div>

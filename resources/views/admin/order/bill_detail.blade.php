@@ -1,129 +1,123 @@
 @extends('layout_admin.admin')
-@section('title')Trang Order Admin
+@section('title')Trang Chi tiết đơn hàng
 @endsection
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  @include('partials.content-header',['name' =>'Order','key'=>'List'])
-<section class="breadcrumb-section set-bg" data-setbg="source/img/breadcrumb.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="breadcrumb__text">
-                    <h2>Chi tiết đơn hàng</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="checkout spad">
-    <div class="container">
-        <div class="checkout__form" >
+    <!-- Content Header (Page header) -->
+    @include('partials.content-header',['name' =>'Order','key'=>'Detail'])
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <div class="content">
+        <a class="btn btn-primary" href="{{ route('order.index') }}">Back</a>
+        <h2 style="text-align: center;">Thông tin đơn hàng</h2>
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <h4>Thông tin về khách hàng</h4>
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <h4>Danh sách sản phẩm</h4>
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    ID
+                                </th>
+                                <th scope="col">
+                                    Name Product
+                                </th>                             
+                                <th scope="col">
+                                    Image Product
+                                </th>
+                                <th scope="col">
+                                   Price
+                                </th>
+                                <th scope="col">
+                                    Quantity
+                                </th>
+                                <th scope="col">
+                                   Total Price
+                                </th>                                                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach($bill_detail as $item)
+                           <?php $product = App\Product::where('id',$item->id_product)->first();                  
+                           ?>
+                           <tr>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->name_product}}</td>                          
+                            <td>
+                                <img src="{{$product->link_image}}" width="150px" >
+                            </td>
+                            <td>{{number_format($item->price)}}<u>$</u></td>
+                            <td>{{$item->quantity}}</td>
+                            <td>{{number_format($item->price*$item->quantity)}}<u>$</u></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <h4 style="margin: 35px;color: red;">Tổng: {{number_format($bill->total_price)}}<u>$</u></h4>
+            </div> 
+            {!! $bill_detail->links() !!}          
+        </div>
+        <!-- /.row -->
+    </div>
+    <h2 style="text-align: ;">Thông tin khách hàng</h2>
+    <hr>
+    <div class="container-fluid">
+        <div class="col-lg-4 col-md-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="checkout__input">
+                        <h5 class="mb-2">Họ và tên: {{$customer->fullname}}</h5>
+                    </div>
                 </div>
             </div>
-        <form action="#" method="post">
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <h5 class="mb-2">Họ và tên: {{$crr_customer->fullname}}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <h5>Giới tính: {{$crr_customer->gender}}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="checkout__input">
-                            <h5 class="mb-2">Địa chỉ: {{-- {{$crr_customer->address}} --}}</h5>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <h5 class="mb-2">Số điện thoại: {{-- {{$crr_customer->phone_number}} --}}</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <h5 class="mb-2">Email: {{-- {{$crr_customer->email}} --}}</h5>
-                                </div>
-                            </div>
-                        </div>                    
-                        <div>
-                        <div class="col-lg-12" >
-                            <div class="row">
-                            <div class="col-lg-7"></div>
-                            <div class="col-lg-5">Trang thai :
-                                @if($crr_bill->status=='Chưa xử lý')
-                                    <a href="{{-- {{route('xulydonhang',$crr_bill->bill_id)}} --}}" class="btn btn-danger"><i class="fa fa-check" aria-hidden="true"></i>Chưa xử lý</a>
-                                @else
-                                    <button type="button" class="btn btn-success"  ><i class="fa fa-check" aria-hidden="true"></i>Đã xử lý</button>
-                                @endif
-                            </div>
-                            <div class="col-lg-7"></div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="checkout__order">
-                            <table class="table table-bordered" style="margin-top:20px;">
-                                <thead >
-                                    <tr class="bg-primary">
-                                        <th width="3%">ID</th>
-                                        <th width="10%">Tên Sản phẩm</th>
-                                        <th width="15%">Hình ảnh</th>
-                                        <th width="10%">Giá</th>
-                                        <th width="1%">Số lượng</th>
-                                        <th width="10%">Thành tiền</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                   {{--  @foreach($crr_bill_detail as $cbd)
-                                        <?php $product = App\Product::where('product_id',$cbd->product_id)->first()
-                                        ?>
-                                    <tr>
-                                        <td>{{$product->product_id}}</td>
-                                        <td>{{$product->product_name}}</td>
-                                        <td>
-                                            <div style="text-align: center">
-                                            <img width="100px" src="source/img/product/{{$product->product_image}}" class="thumbnail">
-                                            </div>
-                                        </td>
-                                        <td>{{number_format($cbd->unit_price)}}<u>đ</u></td>
-                                        <td>{{$cbd->quantity}}</td>
-                                        <td>{{number_format($cbd->unit_price*$cbd->quantity)}}<u>đ</u></td>
-                                    </tr>
-                                    @endforeach --}}
-                                </tbody>
-                                <h4>Tổng: {{-- {{number_format($crr_bill->total)}} --}}<u>đ</u></h4>
-                            </table>
-                            <div style="text-align: right">
-                                <div class="row" style="display:inline-block">
-                                   {{--  {!! $crr_bill_detail->links() !!} --}}
-                                </div>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="checkout__input">
+                        <h5>Giới tính: {{$customer->gender}}</h5>
                     </div>
                 </div>
-            </form>
+            </div>
+            <div class="checkout__input">
+                <h5 class="mb-2">Tỉnh: {{$bill->address}}</h5>
+            </div>
+
+            <div class="checkout__input">
+                <h5 class="mb-2">Thành phố: {{$bill->city}}</h5>
+            </div>
+            <div class="checkout__input">
+                <h5 class="mb-2">Phường: {{$bill->district}}</h5>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="checkout__input">
+                        <h5 class="mb-2">Số điện thoại: +{{$bill->phone}}</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="checkout__input">
+                        <h5 class="mb-2">Email: {{$customer->email}}</h5>
+                    </div>
+                </div>
+            </div>                       
+            <div>
+
+                <div class="col-lg-12" >
+                    <div class="row">
+                        <h5 style="margin-right: 10px;" >Trạng thái : </h5>                 
+                        @if($bill->status=='Chưa xử lý')
+                        <a href="{{route('DeliveryBill',$bill->bill_id)}}" class="btn btn-danger"><i class="fa fa-check" aria-hidden="true"></i>Chưa xử lý</a>
+                        @else
+                        <button type="button" class="btn btn-success"  ><i class="fa fa-check" aria-hidden="true"></i>Đã xử lý</button>
+                        @endif
+                    </div>                      
+                </div>
+            </div>
         </div>
+        <!-- /.content -->
     </div>
-</section>
-@endsection
+    <!-- /.content-wrapper -->
+    @endsection

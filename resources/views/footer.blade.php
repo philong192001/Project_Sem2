@@ -56,10 +56,10 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><a href=""><span class="icon icon-map-marker"></span><span class="text">Số 8 Tôn Thất Thuyết , Nam Từ Liêm,Mỹ Đình, Hà Nội</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+0355882001</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">longpvth1907014@fpt.edu.vn</span></a></li>
-                   <li><a href="#"><span class="icon icon-envelope"></span><span class="text"> minhnghianmth1907015@fpt.edu.vn</span></a></li>
+	                <li><a href=""><span class="icon icon-map-marker"></span><span class="text">{{getConfigValueSettingTable('addressDetail_contact')}}</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">{{getConfigValueSettingTable('phone_contact')}}</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">{{getConfigValueSettingTable('email_contact_1')}}</span></a></li>
+                   <li><a href="#"><span class="icon icon-envelope"></span><span class="text">{{getConfigValueSettingTable('email_contact_2')}}</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -67,9 +67,8 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-
             <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/phinongne/" target="_blank">VGC</a></p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/phinongne/" target="_blank">{{getConfigValueSettingTable('Made-by_footer')}}</a></p>
           </div>
         </div>
       </div>

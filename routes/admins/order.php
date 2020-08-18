@@ -11,8 +11,8 @@ Route::prefix('order')->group(function () {
 		'as'=>'DeliveryBill',
 		'uses'=>'Admin\OrderController@getDelivery'
 	]);
-	Route::get('chi-tiet-don-hang/{id}',[
-    'as'=>'chitietdonhang',
-    'uses'=>'Admin\OrderController@getBillDetail'
-]);      
+	Route::get('order-details/{id}',[
+		'as'=>'BillDetail',
+		'uses'=>'Admin\OrderController@getBillDetail'
+	]);      
 });

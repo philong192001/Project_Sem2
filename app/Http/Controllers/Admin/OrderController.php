@@ -25,11 +25,10 @@ class OrderController extends Controller
         return redirect()->back();
     }
      public function getBillDetail(Request $req){
-        $crr_bill = Bill::where('id',$req->id)->first();
-        $crr_customer = User::where('id',$crr_bill->id_user)->first();
-        // $crr_bill_detail = BillDetail::where('id',$crr_bill->id)->paginate(4);
-
-        return view('admin.order.bill_detail',compact('crr_bill','crr_customer'));
+        $bill = Bill::where('id',$req->id)->first();
+        $customer = User::where('id',$bill->id_user)->first();
+        $bill_detail = BillDetail::where('id_bill',$bill->id)->paginate(4);
+        return view('admin.order.bill_detail',compact('bill','customer','bill_detail'));
 
     }
 }
