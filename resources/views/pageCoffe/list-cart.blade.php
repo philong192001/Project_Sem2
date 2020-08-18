@@ -21,7 +21,7 @@
     <td class="price">$ {{ number_format($item['productInfo']->price) }}</td>
     <td class="quantity">
       <div class="input-group mb-3">
-        <input type="number" id="quanty-item-{{ $item['productInfo']->id }}" class="quantity form-control input-number" value="{{ $item['quanty'] }}" >
+        <input type="number" id="quanty-item-{{ $item['productInfo']->id }}" onkeypress="return event.charCode >= 48" min="1" class="quantity form-control input-number" value="{{ $item['quanty'] }}" >
       </div>
     </td>
     <td class="total">$ {{ number_format($item['price']) }}</td>

@@ -23,16 +23,16 @@
           @foreach ($blogList as $item)
           <div class="col-md-4 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url({{ $item->link_image  }});">
+              <a href="{{ route('show-blogdetail', $item->id) }}" class="block-20" style="background-image: url({{ $item->link_image }});">
               </a>
               <div class="text py-4 d-block">
                 <div class="meta">
                   <div><a href="#">{{ $item->created_at}}</a></div>
-                  <div><a href="#">{{ $item->name }}</a></div>
+                  <div><a href="{{ route('show-blogdetail', $item->id) }}">{{ $item->name }}</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">{{ $item->title }}</a></h3>
-                <p>{{ $item->content }}</p>
+                <h3 class="heading mt-2"><a href="{{ route('show-blogdetail', $item->id) }}">{{ $item->title }}</a></h3>
+                <p class="slow" >{{ $item->content }}</p>
               </div>
             </div>
           </div>

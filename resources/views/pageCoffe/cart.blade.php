@@ -74,7 +74,7 @@
                                 </td>
                                 <td class="quantity">
                                     <div class="input-group mb-3">
-                                        <input class="quantity form-control input-number" id="quanty-item-{{ $item['productInfo']->id }}" type="number" value="{{ $item['quanty'] }}">
+                                        <input class="quantity form-control input-number" id="quanty-item-{{ $item['productInfo']->id }}" onkeypress="return event.charCode >= 48" min="1" type="number" value="{{ $item['quanty'] }}">
                                         </input>
                                     </div>
                                 </td>
