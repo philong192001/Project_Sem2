@@ -15,19 +15,23 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
 	\UniSharp\LaravelFilemanager\Lfm::routes();
 });
-Route::get('/', 'Admin\AdminController@loginAdmin')->name('admin.login');
-Route::post('/', 'Admin\AdminController@postloginAdmin');
+Route::get('/admin-login','Admin\AdminController@loginAdmin')->name('admin.login');
+
+Route::post('/admin-login', 'Admin\AdminController@postloginAdmin');
 
 Route::get('/register-user','Admin\AdminController@RegisterUser')->name('register.user');
 Route::post('/register-user', 'Admin\AdminController@postRegisterUser');
 
-Route::get('/admin', 'Admin\AdminController@loginAdmin');
-Route::post('/admin', 'Admin\AdminController@postloginAdmin');
+// Route::get('/admin', 'Admin\AdminController@loginAdmin');
+// Route::post('/admin', 'Admin\AdminController@postloginAdmin');
 
-Route::get('/homeadmin', function () {
-	return view('admin.home');
-});
-Route::get('/logout', [
+Route::get('/home-admin', [
+	'as' => 'home.admin',
+	'uses' => 'Admin\AdminController@home',
+	// 'middleware' => 'can:admin-list'
+])->middleware('adminLogin::class');;
+
+Route::get('/log-out', [
 	'as' => 'admin.logout',
 	'uses' => 'Admin\AdminController@logout'
 ]);

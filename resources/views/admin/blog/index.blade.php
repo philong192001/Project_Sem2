@@ -23,11 +23,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-12">
-                           
+                            @can('blog-add')
                             <a class="btn btn-success float-right n-2" href="{{ route('blog.create') }}">
                                 Add
                             </a>
-                           
+                           @endcan
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -74,18 +74,18 @@
                                         {{ $item->status }}
                                     </td>
                                     <td>
-                                       
+                                        @can('blog-edit')
                                         <a class="btn btn-success" href="{{ route('blog.edit',['id'=>$item->id]) }}">
                                             Sua
                                         </a>
-                                       
+                                       @endcan
                                     </td>
                                     <td>
-                                      
+                                       @can('blog-delete')
                                         <a class="btn btn-danger action_delete" data-url="{{ route('blog.delete',['id'=>$item->id]) }}">
                                             Xoa
                                         </a>
-                                       
+                                       @endcan
                                     </td>
                                     <td>
                                     </td>
