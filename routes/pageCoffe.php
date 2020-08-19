@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
         Route::get('', 'Coffe\PageController@showHome')->name('show-home');
 
+        Route::post('', 'Coffe\PageController@showPostContact');
+
         /* ----------------------End Home--------------------------*/
 
 
@@ -53,7 +55,7 @@ use Illuminate\Support\Facades\Route;
         /* ----------------------End ProDetail--------------------------*/
 
         /* ----------------------ConTact--------------------------*/
-        Route::get('contact', 'Coffe\ContactController@showContact')->name('show-contact');
+        // Route::get('', 'Coffe\PageController@showContact');
         /* ----------------------End Contact--------------------------*/
 
         /* ----------------------Cart--------------------------*/

@@ -12,9 +12,12 @@ class CartController extends Controller
 {
     public function showCart() 
     {
+         $blogList = DB::table('blogs')
+        ->leftJoin('users', 'users.id', '=', 'blogs.id_user')
+        ->select('blogs.*', 'users.name')->get();
         
     	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
-    	return view('pageCoffe.cart', compact('products'));
+    	return view('pageCoffe.cart', compact('products', 'blogList'));
     }
 
     public function AddCart(Request $req,$id)

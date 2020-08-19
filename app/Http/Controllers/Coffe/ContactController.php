@@ -9,7 +9,8 @@ class ContactController extends Controller
 {
     public function showContact()
     {
-    	$products = DB::table('products')->paginate(8);
-    	return view('pageCoffe.contact');
+    	// $feedback = DB::table('feedback')->take(5)->get();
+
+    	// return view('pageCoffe.home',compact('feedback'));
     }
 }

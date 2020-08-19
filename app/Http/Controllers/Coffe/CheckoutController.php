@@ -17,8 +17,11 @@ class CheckoutController extends Controller
 {
     public function showCheckout()
     {
+        $blogList = DB::table('blogs')
+        ->leftJoin('users', 'users.id', '=', 'blogs.id_user')
+        ->select('blogs.*', 'users.name')->get();
     	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
-    	return view('pageCoffe.checkout', compact('products'));
+    	return view('pageCoffe.checkout', compact('products', 'blogList'));
     }
 
     public function showPostCheckout(Request $req)

@@ -183,7 +183,7 @@
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4">Our Menu</h2>
 	            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-	            <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
+	            <p><a href="{{ route('show-menu') }}" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
 	          </div>
     			</div>
     			<div class="col-md-6">
@@ -510,71 +510,23 @@
 	    </div>
 	    <div class="container-wrap">
 	      <div class="row d-flex no-gutters">
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony">
-	             <blockquote>
-	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="{{ asset('img/person_2.jpg')}}" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end">
-	          <div class="testimony overlay">
-	             <blockquote>
-	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="{{ asset('img/person_2.jpg')}}" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony">
-	             <blockquote>
-	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="{{ asset('img/person_3.jpg')}}" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end">
-	          <div class="testimony overlay">
-	             <blockquote>
-	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="{{ asset('img/person_2.jpg')}}" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony">
-	            <blockquote>
-	              <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
-	            </blockquote>
-	            <div class="author d-flex mt-4">
-	              <div class="image mr-3 align-self-center">
-	                <img src="{{ asset('img/person_3.jpg')}}" alt="">
-	              </div>
-	              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	            </div>
-	          </div>
-	        </div>
+	        @foreach ($feedback as $item)
+            <div class="col-lg align-self-sm-end">
+            <div class="testimony overlay" style="border: 1px solid;border-color: #15363f;">
+               <blockquote>
+                  <p class="slow">&ldquo;{{ $item->content }}&rdquo;</p>
+                </blockquote>
+                <div class="author d-flex mt-4">
+                  <div class="image mr-3 align-self-center">
+                    <img src="{{ asset('img/person_2.jpg')}}" alt="">
+                  </div>
+                  <div class="name align-self-center">{{ $item->name }} <span class="position">{{ $item->created_at }}</span></div>
+                </div>
+            </div>
+          </div>
+          @endforeach
+	        
+	        
 	      </div>
 	    </div>
 	  </section>
@@ -615,45 +567,48 @@
     	<div class="container-wrap">
     		<div class="row no-gutters d-md-flex align-items-center">
     			<div class="col-md-6 d-flex align-self-stretch">
-    				<div id="map"></div>
+    				<div id="map" style="margin-left: 92px; margin-top: 76px;">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.095307416728!2d105.77955771488337!3d21.028872185998257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b3260b1a8b%3A0x862052392e3f478e!2zOCBUw7RuIFRo4bqldCBUaHV54bq_dCwgTeG7uSDEkMOsbmgsIFThu6sgTGnDqm0sIEjDoCBO4buZaSAxMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1597821933559!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+            </div>
     			</div>
 	    		<div class="col-md-6 appointment ftco-animate">
-	    			<h3 class="mb-3">Book a Table</h3>
-	    			<form action="#" class="appointment-form">
-	    				<div class="d-md-flex">
-		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name">
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Last Name">
-		    				</div>
-	    				</div>
-	    				<div class="d-md-flex">
-		    				<div class="form-group">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-		            		<input type="text" class="form-control appointment_date" placeholder="Date">
-	            		</div>
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-ios-clock"></span></div>
-		            		<input type="text" class="form-control appointment_time" placeholder="Time">
-	            		</div>
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Phone">
-		    				</div>
-	    				</div>
-	    				<div class="d-md-flex">
-	    					<div class="form-group">
-		              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
-		            </div>
-		            <div class="form-group ml-md-4">
-		              <input type="submit" value="Appointment" class="btn btn-primary py-3 px-4">
-		            </div>
-	    				</div>
-	    			</form>
+	    			 <h3 class="mb-3">Contact Us</h3>
+         <form action="{{ route('show-home') }}" method="POST" class="contact-form">
+           <input type="hidden" name="_token" value="{{csrf_token()}}">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                   @if(Auth::check())
+                   <b><input type="text" id="name" name="name" class="form-control" value ="{{Auth::user()->name}}" required ></b>
+                   @else
+                   <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required >
+                   @endif
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    @if(Auth::check())
+                    <input type="text" id="email" name="email" class="form-control" value ="{{Auth::user()->email}}" required >
+                    @else
+                    <input type="text" id="email" name="email" class="form-control"  placeholder="Your Email" required >
+                    @endif
+                  </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                @if(Auth::check())
+                <input type="text" id="phone" name="phone" class="form-control" value ="{{Auth::user()->phone}}" required >
+                @else
+                <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone" required >
+                @endif
+              </div>
+              <div class="form-group">
+                <textarea  id="content" cols="30" rows="7" name="content" class="form-control" value ="" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
 	    		</div>    			
     		</div>
     	</div>
