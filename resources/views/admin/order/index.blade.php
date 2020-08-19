@@ -12,6 +12,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <form action="{{ route('search.order') }}">
+                        <input class="form-control" name="key" placeholder="Nhập trạng thái đơn hàng" style="width: 50%;margin-bottom: 5px;" type="text">
+                        </input>
+                    </form>
                     <table class="table">
                         <thead>
                             <tr>
@@ -62,10 +66,10 @@
                                     ${{ number_format($item->total_price) }}
                                 </td>
                                 <td>
-                                     @can('order-add')
+                                    @can('order-add')
                                     <div style="display: inline-grid;">
                                         {{$item->status}} 
-                                        @if($item->status=='Chưa Giao Hàng')
+                            @if($item->status=='Chưa Giao Hàng')
                                         <a class="btn btn-danger" href="{{route('DeliveryBill',$item->id)}}">
                                             Giao hàng
                                         </a>
@@ -79,7 +83,7 @@
                                     @endcan
                                 </td>
                                 <td>
-                                     @can('order-edit')
+                                    @can('order-edit')
                                     <a class="btn btn-warning" href="{{route('BillDetail',$item->id)}}">
                                         <i aria-hidden="true" class="fa fa-fa-th-list">
                                         </i>

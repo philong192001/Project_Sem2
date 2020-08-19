@@ -23,7 +23,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-12">
-                             @can('role-add')
+                            <form action="{{ route('search.role') }}">
+                                <input class="form-control" name="key" placeholder="Nhập tên vai trò" style="width: 50%;" type="text">
+                                </input>
+                            </form>
+                            @can('role-add')
                             <a class="btn btn-success float-right n-2" href="{{ route('roles.create') }}">
                                 Add
                             </a>
@@ -38,10 +42,10 @@
                                         ID
                                     </th>
                                     <th scope="col">
-                                       Tên Vai Trò
+                                        Tên Vai Trò
                                     </th>
                                     <th scope="col">
-                                       Mô tả Vai Trò
+                                        Mô tả Vai Trò
                                     </th>
                                     <th>
                                     </th>
@@ -60,17 +64,17 @@
                                     </td>
                                     <td>
                                         {{ $item->display_name }}
-                                    </td>                                
+                                    </td>
                                     <td>
-                                         @can('role-edit')
+                                        @can('role-edit')
                                         <a class="btn btn-success" href="{{ route('roles.edit',['id'=>$item->id]) }}">
                                             Sua
                                         </a>
                                         @endcan
                                     </td>
                                     <td>
-                                         @can('role-delete')
-                                        <a class="btn btn-danger action_delete" data-url="{{ route('roles.delete',['id'=>$item->id]) }}" >
+                                        @can('role-delete')
+                                        <a class="btn btn-danger action_delete" data-url="{{ route('roles.delete',['id'=>$item->id]) }}">
                                             Xoa
                                         </a>
                                         @endcan

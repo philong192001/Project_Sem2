@@ -34,4 +34,8 @@ Route::middleware([adminLogin::class])->prefix('blog')->group(function () {
             'uses'       => 'Admin\BlogController@delete',
             'middleware' => 'can:blog-delete'
         ]);
+     Route::get('search',[
+        'as'=>'search.blog',
+        'uses'=>'Admin\BlogController@getSearch'
+    ]);
 });

@@ -85,4 +85,14 @@ class BlogController extends Controller
     {
         return $this->deleteTrait($id, $this->blog);
     }
+      public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $blog = Blog::where('title', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.blog.search', compact('blog','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
+    }
 }

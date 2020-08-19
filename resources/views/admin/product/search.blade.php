@@ -1,26 +1,39 @@
 @extends('layout_admin.admin')
-@section('title')Trang Categories
+@section('title')Trang Search Product
 @endsection
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    @include('partials.content-header',['name' =>'Category','key'=>'List'])
+    @include('partials.content-header',['name' =>'Product','key'=>'Search'])
     <!-- /.content-header -->
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
+            <div class="section-title">
+                <h2>
+                    Kết quả tìm kiếm cho: "
+                    <u style="color: red;">
+                        {{$search_name}}
+                    </u>
+                    "
+                </h2>
+            </div>
+            <div class="section-title">
+                <h3>
+                    Tìm thấy
+                    <b style="color: red;">
+                        {{count($product)}}
+                    </b>
+                    kết quả
+                </h3>
+            </div>
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{ route('search.category') }}">
-                        <input class="form-control" name="key" placeholder="Nhập tên danh mục" style="width: 50%;" type="text">
+                    <form action="{{ route('search.product') }}">
+                        <input class="form-control" name="key" placeholder="Nhập tên danh mục để tìm kiếm" style="margin-bottom: 10px;" type="text">
                         </input>
                     </form>
-                    @can('category-add')
-                    <a class="btn btn-success float-right n-2" href="{{ route('categories.create') }}">
-                        Add
-                    </a>
-                    @endcan
                 </div>
                 <div class="col-md-12">
                     <table class="table">
@@ -48,33 +61,41 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $item)
+                            @foreach ($product as $item)
                             <tr>
                                 <td scope="row">
                                     {{ $item->id }}
                                 </td>
                                 <td>
-                                    {{ $item->name }}
+                                    {{ $item->name_product }}
                                 </td>
                                 <td>
-                                    {{ $item->parent_id }}
+                                    <img height="100px" src="{{ $item->link_image }}" width="100px">
+                                    </img>
                                 </td>
                                 <td>
-                                    {{ $item->status }}
+                                    <img height="100px" src="{{ $item->feature_image_path }}" width="100px">
+                                    </img>
                                 </td>
                                 <td>
-                                    {{ $item->created_at }}
+                                    {{ number_format( $item->price) }} VND
                                 </td>
                                 <td>
-                                    @can('category-edit')
-                                    <a class="btn btn-success" href="{{ route('categories.edit',['id'=>$item->id]) }}">
+                                    {{ $item->content }}
+                                </td>
+                                <td>
+                                    {{ optional( $item->category)->name }}
+                                </td>
+                                <td>
+                                    @can('product-edit')
+                                    <a class="btn btn-success" href="{{ route('product.edit',['id'=>$item->id]) }}">
                                         Sua
                                     </a>
                                     @endcan
                                 </td>
                                 <td>
-                                    @can('category-delete')
-                                    <a class="btn btn-danger" href="{{ route('categories.delete',['id'=>$item->id]) }}">
+                                    @can('product-delete')
+                                    <a class="btn btn-danger action_delete" data-url="{{ route('product.delete',['id'=>$item->id]) }}" href="">
                                         Xoa
                                     </a>
                                     @endcan
@@ -87,7 +108,7 @@
                     </table>
                 </div>
                 <div class="col-md-12">
-                    {{ $categories->links() }}
+                    {!! $product->links() !!}
                 </div>
             </div>
             <!-- /.row -->

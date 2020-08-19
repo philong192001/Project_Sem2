@@ -23,8 +23,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-12">
-                     @can('user-add')
-                     <a class="btn btn-success float-right n-2" href="{{ route('users.create') }}">
+                        <form action="{{ route('search.user') }}">
+                            <input class="form-control" name="key" placeholder="Nhập tên người dùng" style="width: 50%;" type="text">
+                        </input>
+                    </form>
+                    @can('user-add')
+                    <a class="btn btn-success float-right n-2" href="{{ route('users.create') }}">
                         Add
                     </a>
                     @endcan
@@ -81,8 +85,8 @@
                                 @endcan
                             </td>
                             <td>
-                             @can('user-delete')
-                             <a class="btn btn-danger action_delete" data-url="{{ route('users.delete',['id'=>$item->id]) }}" >
+                               @can('user-delete')
+                               <a class="btn btn-danger action_delete" data-url="{{ route('users.delete',['id'=>$item->id]) }}" >
                                 Xoa
                             </a>
                             @endcan

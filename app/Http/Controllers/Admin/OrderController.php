@@ -29,6 +29,15 @@ class OrderController extends Controller
         $customer = User::where('id',$bill->id_user)->first();
         $bill_detail = BillDetail::where('id_bill',$bill->id)->paginate(4);
         return view('admin.order.bill_detail',compact('bill','customer','bill_detail'));
-
+    }
+     public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $order = Bill::where('status', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.order.search', compact('order','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
     }
 }

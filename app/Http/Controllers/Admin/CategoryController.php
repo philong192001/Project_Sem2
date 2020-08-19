@@ -81,4 +81,14 @@ class CategoryController extends Controller
 		$this->category->find($id)->delete();
 		return redirect()->route ('categories.index');
 	}
+	public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $category = Category::where('name', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.categories.search', compact('category','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
+    }
 }

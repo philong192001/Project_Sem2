@@ -16,5 +16,9 @@ Route::prefix('order')->group(function () {
 		'as'=>'BillDetail',
 		'uses'=>'Admin\OrderController@getBillDetail',
 		 'middleware'=>'can:order-edit'
-	]);      
+	]);
+	Route::get('search',[
+        'as'=>'search.order',
+        'uses'=>'Admin\OrderController@getSearch'
+    ]);      
 });

@@ -82,4 +82,14 @@ class UserController extends Controller
 	{
 		return $this->deleteTrait($id,$this->user);
 	}
+	 public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $user = User::where('name', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.user.search', compact('user','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
+    }
 }

@@ -34,4 +34,8 @@ Route::prefix('roles')->group(function () {
                 'as'=>'roles.update',
                 'uses'=>'Admin\RoleController@update'
             ]);
+        Route::get('search',[
+        'as'=>'search.role',
+        'uses'=>'Admin\RoleController@getSearch'
+    ]);
     });

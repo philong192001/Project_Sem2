@@ -1,26 +1,39 @@
 @extends('layout_admin.admin')
-@section('title')Trang Categories
+@section('title')Trang Search Setting
 @endsection
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    @include('partials.content-header',['name' =>'Category','key'=>'List'])
+    @include('partials.content-header',['name' =>'Setting','key'=>'Search'])
     <!-- /.content-header -->
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
+            <div class="section-title">
+                <h2>
+                    Kết quả tìm kiếm cho: "
+                    <u style="color: red;">
+                        {{$search_name}}
+                    </u>
+                    "
+                </h2>
+            </div>
+            <div class="section-title">
+                <h3>
+                    Tìm thấy
+                    <b style="color: red;">
+                        {{count($setting)}}
+                    </b>
+                    kết quả
+                </h3>
+            </div>
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{ route('search.category') }}">
-                        <input class="form-control" name="key" placeholder="Nhập tên danh mục" style="width: 50%;" type="text">
+                    <form action="{{ route('search.setting') }}">
+                        <input class="form-control" name="key" placeholder="Nhập config key để tìm kiếm" style="margin-bottom: 10px;" type="text">
                         </input>
                     </form>
-                    @can('category-add')
-                    <a class="btn btn-success float-right n-2" href="{{ route('categories.create') }}">
-                        Add
-                    </a>
-                    @endcan
                 </div>
                 <div class="col-md-12">
                     <table class="table">
@@ -48,33 +61,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $item)
+                            @foreach ($setting as $item)
                             <tr>
                                 <td scope="row">
                                     {{ $item->id }}
                                 </td>
                                 <td>
-                                    {{ $item->name }}
+                                    {{ $item->config_key }}
                                 </td>
                                 <td>
-                                    {{ $item->parent_id }}
+                                    {{ $item->config_value }}
                                 </td>
                                 <td>
-                                    {{ $item->status }}
-                                </td>
-                                <td>
-                                    {{ $item->created_at }}
-                                </td>
-                                <td>
-                                    @can('category-edit')
-                                    <a class="btn btn-success" href="{{ route('categories.edit',['id'=>$item->id]) }}">
+                                    @can('setting-edit')
+                                    <a class="btn btn-success" href="{{ route('settings.edit',['id'=>$item->id]).'?type='.$item->type }}">
                                         Sua
                                     </a>
                                     @endcan
                                 </td>
                                 <td>
-                                    @can('category-delete')
-                                    <a class="btn btn-danger" href="{{ route('categories.delete',['id'=>$item->id]) }}">
+                                    @can('setting-delete')
+                                    <a class="btn btn-danger action_delete" data-url="{{ route('settings.delete',['id'=>$item->id]) }}" href="">
                                         Xoa
                                     </a>
                                     @endcan
@@ -87,7 +94,7 @@
                     </table>
                 </div>
                 <div class="col-md-12">
-                    {{ $categories->links() }}
+                    {!! $setting->links() !!}
                 </div>
             </div>
             <!-- /.row -->

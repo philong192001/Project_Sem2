@@ -52,4 +52,14 @@ class SettingController extends Controller
     {
     	return $this->deleteTrait($id,$this->setting);
     }
+    public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $setting = Setting::where('config_key', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.setting.search', compact('setting','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
+    }
 }

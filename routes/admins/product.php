@@ -35,4 +35,8 @@
                 'as'   => 'product.update',
                 'uses' => 'Admin\ProductController@update',
             ]);
+        Route::get('search',[
+        'as'=>'search.product',
+        'uses'=>'Admin\ProductController@getSearch'
+    ]);
     });

@@ -64,5 +64,14 @@ class RoleController extends Controller
     {
     	return $this->deleteTrait($id,$this->role);
     }
-   
+    public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $role = Role::where('name', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.role.search', compact('role','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
+    }
 }

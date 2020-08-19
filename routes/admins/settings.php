@@ -34,4 +34,8 @@ Route::prefix('settings')->group(function () {
             'as'=>'settings.update',
             'uses'=>'Admin\SettingController@update'
         ]);
+    Route::get('search',[
+        'as'=>'search.setting',
+        'uses'=>'Admin\SettingController@getSearch'
+    ]);
 });

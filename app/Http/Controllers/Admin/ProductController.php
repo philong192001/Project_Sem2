@@ -104,4 +104,14 @@ class ProductController extends Controller
     {
      return $this->deleteTrait($id,$this->product);
     }
+    public function getSearch(Request $req){
+        $search_name = $req->key;
+        if ($search_name!==null && $search_name!=='') {
+            $product = Product::where('name_product', 'like', '%'.$req->key.'%')->paginate(5);
+            return view('admin.product.search', compact('product','search_name'));
+        }else{
+            $alert = 'Bạn chưa nhập nội dung tìm kiếm';
+            return redirect()->back()->with('alert',$alert);
+        }
+    }
 }

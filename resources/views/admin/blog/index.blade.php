@@ -23,6 +23,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-12">
+                             <form action="{{ route('search.blog') }}">
+                                <input class="form-control" name="key" placeholder="Nhập tiêu đề blog" style="width: 50%;" type="text">
+                                </input>
+                            </form>
                             @can('blog-add')
                             <a class="btn btn-success float-right n-2" href="{{ route('blog.create') }}">
                                 Add
