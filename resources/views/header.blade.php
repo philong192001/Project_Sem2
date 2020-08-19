@@ -10,16 +10,7 @@
         <li class="nav-item"><a href="{{ route('show-menu') }}" class="nav-link">Menu</a></li>
         <li class="nav-item"><a href="{{ route('show-services') }}" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="{{ route('show-blog') }}" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="{{ route('show-about') }}" class="nav-link">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{{ route('admin.login') }}">Login</a>
-            <a class="dropdown-item" href="">Register</a>
-            <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
-            <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
-          </div>
-        </li>
+        <li class="nav-item"><a href="{{ route('show-about') }}" class="nav-link">About</a></li>     
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -33,9 +24,25 @@
            </ul>
            @endforeach
            @endforeach
-
          </div>
        </li>
+        <li class="nav-item dropdown">
+           @if(Auth::check())
+          <a class="nav-link dropdown-toggle" href="{{ route('admin.login') }}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-user" style="margin-right: 5px;"></span>{{Auth::user()->name}}</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{{ route('admin.logout') }}">Log out</a>
+            <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
+            <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
+          </div>
+          @else
+          <a class="nav-link dropdown-toggle" href="{{ route('admin.login') }}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{{ route('register.user') }}">Register</a>
+            <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
+            <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
+          </div>
+        </li>
+        @endif
        <li class="nav-item cart dropdown">
         <a class="nav-link drop-btn" >
          <span class="icon icon-shopping_cart"></span>

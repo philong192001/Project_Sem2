@@ -30,74 +30,53 @@
 
   <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('vendors\slowly-content.css') }}">
-  <link rel="shortcut icon" type="image/png" href="{{ asset('img/coffe.png') }}" style="">
+  <link rel="shortcut icon" type="image/png" href="{{ asset('img/coffe.png') }}">
 </head>
 <body>
 
-    {{-- @if(count($errors)>0)
-        <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            @foreach($errors->all() as $err)
-                {{$err}}<br>
-            @endforeach
-        </div>
-    @endif
-    @if(session('alert'))
-        <section class='alert alert-primary alert-dismissible' style="text-align: right; margin-top: 100px;">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            {{session('alert')}}
-        </section>
-    @endif
-    @if(Session::has('flag'))
-        <div class="alert alert-{{Session::get('flag')}}" style="text-align: center">
-             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{Session::get('message')}}
-        </div>
-    @endif --}}
+  @include('header')
+
+  @yield('content')
+
+  @include('footer')
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0" nonce="BftMWha9"></script>
 
 
- @include('header')
-
- @yield('content')
-
- @include('footer')
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('js/popper.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('js/aos.js') }}"></script>
+  <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
+  <script src="{{ asset('js/scrollax.min.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/cart.js') }}"></script>
+  <script src="{{ asset('js/checkvalidate.js') }}"></script>
+  <!-- JavaScript -->
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
- <!-- loader -->
- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <!-- CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+  <!-- Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
 
- <script src="{{ asset('js/jquery.min.js') }}"></script>
- <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
- <script src="{{ asset('js/popper.min.js') }}"></script>
- <script src="{{ asset('js/bootstrap.min.js') }}"></script>
- <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
- <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
- <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
- <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
- <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
- <script src="{{ asset('js/aos.js') }}"></script>
- <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
- <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
- <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
- <script src="{{ asset('js/scrollax.min.js') }}"></script>
- <script src="{{ asset('js/main.js') }}"></script>
- <script src="{{ asset('js/cart.js') }}"></script>
- <script src="{{ asset('js/checkvalidate.js') }}"></script>
- <!-- JavaScript -->
- <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
- <!-- CSS -->
- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
- <!-- Default theme -->
- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
- <!-- Semantic UI theme -->
- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
- <!-- Bootstrap theme -->
- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-
- 
 </body>
 </html>
 

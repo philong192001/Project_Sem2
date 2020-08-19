@@ -33,7 +33,9 @@ class AdminController extends Controller
     		'password'=>$request->password
     	],$remember)) {
     		return redirect()->to('home-admin');
-    	}
+    	}else{
+            return view('login');
+        }
     	//dd($request->all());
     }
     public function logout()
@@ -67,13 +69,12 @@ class AdminController extends Controller
         // dd($role_user);
         // $role_user->save();
 
-          $test =RoleUser::create([
+      RoleUser::create([
             'user_id'=>$user->id,
             'role_id'=>2,
             'created_at'=>date('Y-m-d H:i:s'),
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
-          dd( $test);
         $alert = 'Bạn đã đăng kí tài khoản thành công';
         return redirect()->route('admin.login')->with('alert', $alert);
     }
