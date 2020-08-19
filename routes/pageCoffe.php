@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
         /* ----------------------Home--------------------------*/
 
-        Route::get('home', 'Coffe\PageController@showHome')->name('show-home');
+        Route::get('', 'Coffe\PageController@showHome')->name('show-home');
 
         /* ----------------------End Home--------------------------*/
 

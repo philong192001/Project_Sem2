@@ -29,5 +29,6 @@ class PermissionController extends Controller
                 'key_code'     => $request->module_parent . '_' . $item
             ]);
         }
+        return redirect()->route('settings.index');
     }
 }

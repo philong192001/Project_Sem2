@@ -7,14 +7,19 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\RoleUser;
 use Hash;
 
 class AdminController extends Controller
 {
+    public function home()
+    {
+        return view('admin.home');
+    }
     public function loginAdmin()
     {
     	if (auth()->check()) {
-    		return redirect()->to('homeadmin');
+    		return redirect()->to('home-admin');
     	}
     	//dd(bcrypt('phivanlong'));
     	return view('login');
@@ -27,7 +32,7 @@ class AdminController extends Controller
     		'email'=> $request->email,
     		'password'=>$request->password
     	],$remember)) {
-    		return redirect()->to('homeadmin');
+    		return redirect()->to('home-admin');
     	}
     	//dd($request->all());
     }
@@ -52,8 +57,23 @@ class AdminController extends Controller
         $user->district = $request->district;
         $user->city = $request->city;
         $user->CMTND = $request->CMTND;
-        $user->phone = $request->phone;      
+        $user->phone = $request->phone;
         $user->save();
+
+        // dd($user->id);
+        // $role_user = new RoleUser();
+        // $role_user->user_id=$request->$user->id;
+        // $role_user->role_id=$request->attach(2);
+        // dd($role_user);
+        // $role_user->save();
+
+          $test =RoleUser::create([
+            'user_id'=>$user->id,
+            'role_id'=>2,
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s'),
+        ]);
+          dd( $test);
         $alert = 'Bạn đã đăng kí tài khoản thành công';
         return redirect()->route('admin.login')->with('alert', $alert);
     }

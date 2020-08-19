@@ -31,7 +31,18 @@ return [
 		'list-role'=>'role_list',
 		'add-role'=>'role_add',
 		'edit-role'=>'role_edit',
-		'delete-role'=>'role_delete'
+		'delete-role'=>'role_delete',
+
+		'list-blog'=>'blog_list',
+		'add-blog'=>'blog_add',
+		'edit-blog'=>'blog_edit',
+		'delete-blog'=>'blog_delete',
+
+		'list-order'=>'order_list',
+		'add-order'=>'order_add',
+		'edit-order'=>'order_edit',
+
+		'list-admin'=>'admin_list'
 	],
 	'table_module'=>[
 		'category',
@@ -40,7 +51,9 @@ return [
 		'setting',
 		'user',
 		'role',
-		'blog'
+		'blog',
+		'order',
+		'admin'
 	],
 	'module_childrent'=>[
 		'list',
