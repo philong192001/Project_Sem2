@@ -13,7 +13,7 @@ class ProductController extends Controller
 	{
 		 $blogList = DB::table('blogs')
         ->leftJoin('users', 'users.id', '=', 'blogs.id_user')
-        ->select('blogs.*', 'users.name')->get();
+        ->select('blogs.*', 'users.name')->paginate(3);
 
 
     	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);

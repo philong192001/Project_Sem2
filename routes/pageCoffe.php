@@ -1,12 +1,15 @@
 <?php 
 use Illuminate\Support\Facades\Route;
 
-
+        
         /* ----------------------Home--------------------------*/
 
         Route::get('', 'Coffe\PageController@showHome')->name('show-home');
 
         Route::post('', 'Coffe\PageController@showPostContact');
+
+        Route::post('search/name', 'Coffe\PageController@getSearchAjax')->name('search');
+        
 
         /* ----------------------End Home--------------------------*/
 

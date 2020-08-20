@@ -13,9 +13,9 @@ class AboutController extends Controller
         ->leftJoin('users', 'users.id', '=', 'feedback.id_user')
         ->select('feedback.*', 'users.name')->take(5)->get();
 
-    	 $blogList = DB::table('blogs')
+    	$blogList = DB::table('blogs')
         ->leftJoin('users', 'users.id', '=', 'blogs.id_user')
-        ->select('blogs.*', 'users.name')->get();
+        ->select('blogs.*', 'users.name')->paginate(3);
 
     	return view('pageCoffe.about' ,compact('blogList','feedback'));
     }

@@ -33,7 +33,9 @@ class AdminController extends Controller
     		'password'=>$request->password
     	],$remember)) {
     		return redirect()->to('home-admin');
-    	}
+    	}else{
+            return view('login');
+        }
     	//dd($request->all());
     }
     public function logout()
@@ -67,7 +69,10 @@ class AdminController extends Controller
         // dd($role_user);
         // $role_user->save();
 
-          RoleUser::create([
+
+        
+      RoleUser::create([
+
             'user_id'=>$user->id,
             'role_id'=>2,
             'created_at'=>date('Y-m-d H:i:s'),
