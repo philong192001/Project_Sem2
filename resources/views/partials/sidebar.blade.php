@@ -121,7 +121,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('roles.index') }}">
+                    <a class="nav-link" href="{{ route('feedback.index') }}">
                         <i class="nav-icon fas fa-th">
                         </i>
                         <p>
