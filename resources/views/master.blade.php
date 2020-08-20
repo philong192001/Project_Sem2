@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+ 
 
   <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -31,6 +32,15 @@
   <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('vendors\slowly-content.css') }}">
   <link rel="shortcut icon" type="image/png" href="{{ asset('img/coffe.png') }}">
+<style type="text/css">
+  ul.dropdown-menu>li{
+    padding: 5px;
+  }
+  .dropdown-content.fix {
+    min-width: 350px;
+}
+</style>
+  
 </head>
 <body>
 
@@ -75,8 +85,39 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
   <!-- Bootstrap theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+  
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+ 
 
 </body>
 </html>
 
+ <script>
+  $(document).ready(function(){
+
+   $('#country_name').keyup(function(){ //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
+    var query = $(this).val(); //lấy gía trị ng dùng gõ
+    if(query != '') //kiểm tra khác rỗng thì thực hiện đoạn lệnh bên dưới
+    {
+     var _token = $('input[name="_token"]').val(); // token để mã hóa dữ liệu
+     $.ajax({
+      url:"{{ route('search') }}/", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
+      method:"POST", // phương thức gửi dữ liệu.
+      data:{query:query, _token:_token},
+      success:function(data){ //dữ liệu nhận về
+       $('#countryList').fadeIn();  
+       $('#countryList').html(data); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là countryList
+     }
+   });
+   }
+ });
+
+   $(document).on('click', 'li', function(){  
+    $('#country_name').val($(this).text());  
+    $('#countryList').fadeOut();  
+  });  
+
+ });
+</script>

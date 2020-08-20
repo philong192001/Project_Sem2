@@ -69,7 +69,10 @@ class AdminController extends Controller
         // dd($role_user);
         // $role_user->save();
 
+
+        
       RoleUser::create([
+
             'user_id'=>$user->id,
             'role_id'=>2,
             'created_at'=>date('Y-m-d H:i:s'),

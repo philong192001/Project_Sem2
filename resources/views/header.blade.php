@@ -26,24 +26,26 @@
            @endforeach
          </div>
        </li>
-        <li class="nav-item dropdown">
-           @if(Auth::check())
-          <a class="nav-link dropdown-toggle" href="{{ route('admin.login') }}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-user" style="margin-right: 5px;"></span>{{Auth::user()->name}}</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{{ route('admin.logout') }}">Log out</a>
-            <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
-            <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
-          </div>
-          @else
-          <a class="nav-link dropdown-toggle" href="{{ route('admin.login') }}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{{ route('register.user') }}">Register</a>
-            <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
-            <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
-          </div>
-        </li>
-        @endif
-       <li class="nav-item cart dropdown">
+       <li class="nav-item dropdown">
+         @if(Auth::check())
+         <a class="nav-link dropdown-toggle" href="{{ route('admin.login') }}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-user" style="margin-right: 5px;"></span>{{Auth::user()->name}}</a>
+         <div class="dropdown-menu" aria-labelledby="dropdown04">
+          <a class="dropdown-item" href="{{ route('admin.logout') }}">Log out</a>
+          <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
+          <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
+        </div>
+        @else
+        <a class="nav-link dropdown-toggle" href="{{ route('admin.login') }}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown04">
+          <a class="dropdown-item" href="{{ route('register.user') }}">Register</a>
+          <a class="dropdown-item" href="{{ route('show-cart') }}">Cart</a>
+          <a class="dropdown-item" href="{{ route('show-checkout') }}">Checkout</a>
+        </div>
+      </li>
+      @endif
+
+      {{--  ///////////////////////////////////////////////////// --}}
+      <li class="nav-item cart dropdown">
         <a class="nav-link drop-btn" >
          <span class="icon icon-shopping_cart"></span>
          <span class="bag d-flex justify-content-center align-items-center">
@@ -71,7 +73,7 @@
                   <td class="si-text">
                     <div class="product-selected">
                       <h6>{{ $item['productInfo']->name_product }}</h6>
-                       <p> {{ number_format($item['productInfo']->price) }}₫ x {{ $item['quanty'] }}</p>
+                      <p> {{ number_format($item['productInfo']->price) }}₫ x {{ $item['quanty'] }}</p>
                     </div>
                   </td>
                   <td class="si-close">
@@ -103,10 +105,27 @@
 
 
   </li>
+  {{--  /////////////////////////////////////////////////////////////////// --}}
+  <li class="nav-item cart dropdown">
+    <a class="nav-link drop-btn" >
+      <span class="icon icon-search"></span>
+  </a>
 
+  <div class="dropdown-content fix">
+    <div class="cart-hover">
+      <div class="form-group">
+        <input type="text" name="concac" id="country_name" class="form-control input-lg" placeholder="Enter Country Name" />
+        <div id="countryList"><br>
+        </div>
+      </div>
+      {{ csrf_field() }}
+    </div>
+  </div>
+</li>
 
 </ul>
 </div>
 </div>
 </nav>
     <!-- END nav -->
+   

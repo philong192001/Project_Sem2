@@ -12,15 +12,13 @@ class ShopController extends Controller
 {
     public function showShop()
     { 
-    	// \DB::connection()->enableQueryLog();
-    	
-    	// $sp_theoloai = Product::where('id_category',$type)->get();
-    	//  $chon_loai_sp = Category::where('id_category',$type)->first();
-    	
-    	// $que = \DB::getQueryLog();
-    	// dd($que);
+    	$blogList = DB::table('blogs')
+		->leftJoin('users', 'users.id', '=', 'blogs.id_user')
+		->select('blogs.*', 'users.name')->paginate(3);
+
+
     	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
-    	return view('pageCoffe.shop' , compact('products'));
+    	return view('pageCoffe.shop' , compact('products', 'blogList'));
     }
     
 }

@@ -62,20 +62,20 @@
          <div class="col-md-6">
           <div class="form-group">
             <h5 class="mb-2">Gender<span>*</span></h5>
-             @if(Auth::check())
-             <b><input type="text" id="gender" name="gender" class="form-control" value ="{{Auth::user()->gender}}" required  ></b>
-             @else
-             <input type="text" id="gender" name="gender" class="form-control"  required >
-             @endif
-           
+            @if(Auth::check())
+            <b><input type="text" id="gender" name="gender" class="form-control" value ="{{Auth::user()->gender}}" required  ></b>
+            @else
+            <input type="text" id="gender" name="gender" class="form-control"  required >
+            @endif
+            
           </div>
           
         </div>
-     
-        <div class="w-100"></div>
+        
+        {{-- <div class="w-100"></div> --}}
 
         <div class="w-100"></div>
-        <div class="col-md-12">
+        <div class="col-md-6">
           <div class="form-group">
            <h5 class="mb-2">District<span>*</span></h5>
            @if(Auth::check())
@@ -85,9 +85,19 @@
            @endif
          </div>
        </div>
-
-       <div class="w-100"></div>
        <div class="col-md-6">
+         <div class="form-group">
+          <h5 class="mb-2">Phone<span>*</span></h5>
+          @if(Auth::check())
+          <input type="text" id="phone" name="phone" class="form-control" value ="{{Auth::user()->phone}}" required >
+          @else
+          <input type="text" id="number" name="number" class="form-control"  required >
+          @endif
+        </div>
+      </div>
+
+      <div class="w-100"></div>
+      <div class="col-md-6">
         <div class="form-group">
          <h5 class="mb-2">City<span>*</span></h5>
          @if(Auth::check())
@@ -98,80 +108,70 @@
        </div>
      </div>
      
+     
+     
      <div class="w-100"></div>
-     <div class="col-md-6">
-       <div class="form-group">
-        <h5 class="mb-2">Phone<span>*</span></h5>
-        @if(Auth::check())
-        <input type="text" id="phone" name="phone" class="form-control" value ="{{Auth::user()->phone}}" required >
-        @else
-        <input type="text" id="number" name="number" class="form-control"  required >
-        @endif
+     <div class="col-md-12">
+       <div class="form-group mt-4">
+        <div class="radio">
+          <label class="mr-3"><input type="radio" name="optradio"> Create an Account? </label>
+          <label><input type="radio" name="optradio"> Ship to different address</label>
+        </div>
       </div>
     </div>
     
-    <div class="w-100"></div>
-    <div class="col-md-12">
-     <div class="form-group mt-4">
-      <div class="radio">
-        <label class="mr-3"><input type="radio" name="optradio"> Create an Account? </label>
-        <label><input type="radio" name="optradio"> Ship to different address</label>
-      </div>
-    </div>
   </div>
-  
-</div>
 
 
 
 
-<div class="row mt-5 pt-3 d-flex">
-  <div class="col-md-6 d-flex">
-   <div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4">
-    @if (Session::has("Cart") != null)
+  <div class="row mt-5 pt-3 d-flex">
+    <div class="col-md-6 d-flex">
+     <div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4">
+      @if (Session::has("Cart") != null)
 
-    
-    <h3>Cart Totals</h3>
-    <div class="sidebar-box ftco-animate">
-      <span> Product : </span>
-      @foreach(Session::get('Cart')->products as  $item)
       
-      <p class="text">
-        {{ $item['productInfo']->name_product }}  x ${{ number_format($item['productInfo']->price)}}  x {{ $item['quanty'] }}  
+      <h3>Cart Totals</h3>
+      <div class="sidebar-box ftco-animate">
+        <span> Product : </span>
+        @foreach(Session::get('Cart')->products as  $item)
+        
+        <p class="text">
+          {{ $item['productInfo']->name_product }}  x ${{ number_format($item['productInfo']->price)}}  x {{ $item['quanty'] }}  
+        </p>
+        @endforeach
+      </div>
+      <p class="d-flex">
+        <span>Total Quanty : </span>
+        <span>{{ Session::get('Cart')->totalQuanty }}</span>
       </p>
-      @endforeach
+
+      <hr>
+      <p class="d-flex total-price">
+        <span>Total Price : </span>
+        <span>$ {{ number_format(Session::get('Cart')->totalPrice) }}</span>
+      </p>
+      
+
+      @endif
     </div>
-    <p class="d-flex">
-      <span>Total Quanty : </span>
-      <span>{{ Session::get('Cart')->totalQuanty }}</span>
-    </p>
-
-    <hr>
-    <p class="d-flex total-price">
-      <span>Total Price : </span>
-      <span>$ {{ number_format(Session::get('Cart')->totalPrice) }}</span>
-    </p>
-    
-
-    @endif
   </div>
-</div>
-<div class="col-md-6">
- <div class="cart-detail ftco-bg-dark p-3 p-md-4">
-  <h3  class="billing-heading mb-4">Payment Method</h3>
+  <div class="col-md-6">
+   <div class="cart-detail ftco-bg-dark p-3 p-md-4">
+    <h3  class="billing-heading mb-4">Payment Method</h3>
+    <div class="form-group">
+      <div class="col-md-12">
+       <div class="radio">
+        <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+      </div>
+    </div>
+  </div>
   <div class="form-group">
     <div class="col-md-12">
      <div class="radio">
-      <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+      <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
     </div>
   </div>
-</div>
-<div class="form-group">
-  <div class="col-md-12">
-   <div class="radio">
-    <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-  </div>
-</div>
 </div>
 <div class="form-group">
   <div class="col-md-12">
@@ -249,39 +249,19 @@
 
 <div class="sidebar-box ftco-animate">
   <h3>Recent Blog</h3>
+  @foreach ($blogList as $item)
   <div class="block-21 mb-4 d-flex">
-    <a class="blog-img mr-4" style="background-image: url({{ asset('img/image_1.jpg')}});"></a>
+    <a href="{{ route('show-blogdetail', $item->id) }}" class="blog-img mr-4" style="background-image: url({{ $item->link_image }});"></a>
     <div class="text">
-      <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+      <h3 class="heading"><a class="slow" href="{{ route('show-blogdetail', $item->id) }}">{{ $item->content }}</a></h3>
       <div class="meta">
-        <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-        <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+        <div><a href="#"><span class="icon-calendar"></span> {{ $item->created_at }}</a></div>
+        <div><a href="#"><span class="icon-person"></span> {{ $item->name }}</a></div>
+        <div><a href="#"><span class="icon-chat"></span> </a></div>
       </div>
     </div>
   </div>
-  <div class="block-21 mb-4 d-flex">
-    <a class="blog-img mr-4" style="background-image: url({{ asset('img/image_2.jpg')}});"></a>
-    <div class="text">
-      <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-      <div class="meta">
-        <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-        <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-      </div>
-    </div>
-  </div>
-  <div class="block-21 mb-4 d-flex">
-    <a class="blog-img mr-4" style="background-image: url({{ asset('img/image_3.jpg')}});"></a>
-    <div class="text">
-      <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-      <div class="meta">
-        <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-        <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-      </div>
-    </div>
-  </div>
+  @endforeach
 </div>
 
 <div class="sidebar-box ftco-animate">

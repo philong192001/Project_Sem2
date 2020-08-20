@@ -161,7 +161,7 @@
                                 {{ $item->name_product , $item->id}}
                             </a>
                         </h3>
-                        <p>
+                        <p class="slow">
                             {{ $item->content  }}
                         </p>
                         <p class="price">
