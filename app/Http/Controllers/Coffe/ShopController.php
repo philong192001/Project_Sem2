@@ -12,13 +12,9 @@ class ShopController extends Controller
 {
     public function showShop()
     { 
-    	$blogList = DB::table('blogs')
-		->leftJoin('users', 'users.id', '=', 'blogs.id_user')
-		->select('blogs.*', 'users.name')->paginate(3);
-
-
+    	
     	$products = DB::table('products')->orderby(DB::raw('RAND()'))->paginate(8);
-    	return view('pageCoffe.shop' , compact('products', 'blogList'));
+    	return view('pageCoffe.shop' , compact('products'));
     }
     
 }

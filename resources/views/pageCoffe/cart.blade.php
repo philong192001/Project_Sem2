@@ -95,7 +95,7 @@
             @endif
                         </tbody>
                     </table>
-                </div>
+                </div>  
                 <div class="row justify-content-end">
                     <div class="col col-lg-3 col-md-6 mt-5 cart-wrap ftco-animate">
                         @if (Session::has("Cart") != null)

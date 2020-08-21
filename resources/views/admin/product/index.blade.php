@@ -78,7 +78,7 @@
             </img>
           </td>
           <td>
-            {{ number_format( $item->price) }} VND
+           $ {{ number_format( $item->price) }}
           </td>
           <td>
             {{ $item->content }}

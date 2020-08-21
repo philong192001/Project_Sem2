@@ -32,14 +32,7 @@
   <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('vendors\slowly-content.css') }}">
   <link rel="shortcut icon" type="image/png" href="{{ asset('img/coffe.png') }}">
-<style type="text/css">
-  ul.dropdown-menu>li{
-    padding: 5px;
-  }
-  .dropdown-content.fix {
-    min-width: 350px;
-}
-</style>
+
   
 </head>
 <body>

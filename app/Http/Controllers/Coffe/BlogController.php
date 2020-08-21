@@ -18,12 +18,10 @@ class BlogController extends Controller
 
 	public function showBlogDetail(Request $req, $id)
 	{
-		$blogDetail = DB::table('blogs')->where('id', $req->id)->first();
-
 		$blogList = DB::table('blogs')
 		->leftJoin('users', 'users.id', '=', 'blogs.id_user')
-		->select('blogs.*', 'users.name')->paginate(3);
-        
+		->select('blogs.*', 'users.name')->get();
+		$blogDetail = DB::table('blogs')->where('id', $req->id)->first();
 		return view('pageCoffe.blog-detail',compact('blogDetail', 'blogList'));
 	}
 }

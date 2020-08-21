@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
-
+use DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,6 +24,14 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('partials.sidebar',function($view){
            $user= Auth::user();
             $view->with('user',$user);
+        });
+
+        view()->composer('footer',function($view){         
+           $blogList = DB::table('blogs')
+           ->leftJoin('users', 'users.id', '=', 'blogs.id_user')
+           ->select('blogs.*', 'users.name')->paginate(3);
+
+            $view->with('blogList',$blogList);
         });
     }
 

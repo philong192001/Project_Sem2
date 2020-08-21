@@ -53,7 +53,7 @@ use Illuminate\Support\Facades\Route;
 
         /* ----------------------ProductDetail--------------------------*/
 
-        Route::get('chi-tiet/{id}', 'Coffe\ProductController@ShowProduct')->name('show-productDetail');
+        Route::get('productDetail/{id}', 'Coffe\ProductController@ShowProduct')->name('show-productDetail');
 
         /* ----------------------End ProDetail--------------------------*/
 

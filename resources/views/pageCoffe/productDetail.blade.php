@@ -1,34 +1,21 @@
 @extends('master')
 @section('content')
 <section class="home-slider owl-carousel">
-    <div id="fb-root">
-    </div>
-    <script async="" crossorigin="anonymous" defer="" nonce="1teP0OYZ" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0">
-    </script>
-    <div class="slider-item" data-stellar-background-ratio="0.5" style="background-image: url({{ asset('img/bg_3.jpg')}});">
-        <div class="overlay">
-        </div>
+
+      <div class="slider-item" style="background-image: url({{ asset('img/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
         <div class="container">
-            <div class="row slider-text justify-content-center align-items-center">
-                <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                    <h1 class="mb-3 mt-5 bread">
-                        Product Detail
-                    </h1>
-                    <p class="breadcrumbs">
-                        <span class="mr-2">
-                            <a href="index.html">
-                                Home
-                            </a>
-                        </span>
-                        <span>
-                            Product Detail
-                        </span>
-                    </p>
-                </div>
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                <h1 class="mb-3 mt-5 bread">Product Detail</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Product Detail</span></p>
             </div>
+
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 <section class="ftco-section">
     <div class="container">
         <div class="row">
@@ -73,9 +60,9 @@
                     <div class="col-md-3">
                         <div class="text text-center pt-4">
                             <p>
-                                <a class="btn btn-primary btn-outline-primary" href=" javascrip:">
-                                    Add to Cart
-                                </a>
+                                <a class="btn btn-primary btn-outline-primary" href=" javascrip:" onclick="AddCart({{ $proSingle->id }})">
+                                Add to Cart
+                            </a>
                             </p>
                         </div>
                     </div>
@@ -84,7 +71,7 @@
         </div>
     </div>
 </section>
-<div class="fb-comments" data-href="https://www.facebook.com/phinongne/" data-numposts="50" data-width="1300" style="background-color: white;" ></div>
+<div class="fb-comments" data-href="https://www.facebook.com/phinongne/" data-numposts="50" data-width="1300" style="background-color: white;margin-left: 100px;" ></div>
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">

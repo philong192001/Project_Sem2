@@ -53,10 +53,7 @@
                                     <th scope="col">
                                         Trạng thái
                                     </th>
-                                    <th>
-                                    </th>
-                                    <th>
-                                    </th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,13 +63,13 @@
                                         {{ $item->name }}
                                     </td>
                                     <td>
-                                       <img src="{{ $item->link_image }}"> 
+                                       <img width="300"  src="{{ $item->link_image }}"> 
                                     </td>
                                     <td>
                                         {{ $item->title }}
                                     </td>
                                     <td>
-                                        {{ $item->content }}
+                                        <div class="slow">{{ $item->content }}</div>
                                     </td>
                                     <td>
                                         {{ $item->status }}
@@ -91,8 +88,7 @@
                                         </a>
                                        @endcan
                                     </td>
-                                    <td>
-                                    </td>
+                                  
                                 </tr>
                                 @endforeach
                             </tbody>
